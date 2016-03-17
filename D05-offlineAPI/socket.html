@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+
+  <script>
+  var output;  
+  var websocket;  
+  
+  window.onload = function(){
+    output = document.getElementById("output");
+       websocket = new WebSocket("ws://echo.websocket.org/");
+    websocket.onopen = onOpen;
+    websocket.onclose = onClose;
+    websocket.onmessage = onMessage;
+    websocket.onerror = onError;      
+  };
+  
+  function onOpen(){
+    writeToScreen("CONNECTED");
+  }
+  function sendMessage(elm){
+     websocket.send(elm.value);
+     writeToScreen("we sent "+elm.value);  
+    } 
+   
+  function onClose(){
+    writeToScreen("DISCONNECTED");
+  }
+
+  function onMessage(evt){
+    writeToScreen('<span style="color: blue;">RESPONSE: ' + evt.data+'</span>');
+    var raw=evt.data;
+    writeToScreen('<span style="color: blue;">REVERSED: ' +raw.split("").reverse().join("") +'</span>');
+    
+  }
+
+  function onError(evt){
+    writeToScreen('<span style="color: red;">ERROR:</span> ' + evt.data);
+  }
+
+  function closeSocket(){
+    websocket.close();
+  }
+ 
+  function writeToScreen(message){
+    var p = "<p>"+message+"</p>";
+        output.innerHTML += p;
+  }
+  </script>
+
+</head>
+<body style="background-color:white">
+  <h2>WebSocket Test</h2>
+  <div id="output"></div>
+  <input onchange="sendMessage(this)" />
+  <hr/>
+  
+  <button onclick="closeSocket()">close</button>
+</body>
+</html>

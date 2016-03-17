@@ -1,0 +1,10 @@
+CACHE MANIFEST
+
+CACHE:
+images/batman.jpg
+
+NETWORK:
+images/*
+
+FALLBACK:
+images/				images/001.jpg  
