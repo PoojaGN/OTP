@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style>
+        canvas{
+            border: 5px dashed #f0ee22;
+        }
+    </style>
+    <script>
+      
+        window.onload = init;
+        var ctx = null;
+        function init(){
+        	ctx=document.getElementById("can").getContext("2d");
+           	ctx.fillStyle="#a0a12a";
+        	ctx.strokeStyle="green";
+        	ctx.lineWidth=10;
+        	//ctx.moveTo(200,200);
+            ctx.arc(200,200,100,(Math.PI/180)*0,(Math.PI/180)*360,false);  
+            ctx.stroke();
+            ctx.fill();
+            ctx.closePath();
+        }
+    </script>
+</head>
+<body>
+    <canvas id="can" width="400" height="400"></canvas>
+</body>
+</html>

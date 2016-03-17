@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<style>
+	canvas{
+		width:300px;
+		height:300px;
+	 	boder:2px solid red;
+	 	background-color:#ccff00;
+	 	}	
+	</style>
+	<script>
+		var can=null;
+		var ctx=null;
+		window.onload=function(){
+			can=document.getElementById("can");
+			ctx=can.getContext("2d");
+			//var joke=document.getElementById("joke");
+			//ctx.drawImage(joke,0,0);
+			var img=new Image();
+			img.src="images/001.jpg";
+			img.onload= function() {
+			ctx.drawImage(img,0,0,150,150);	//image object,left ,top
+			};	
+		};
+	</script>
+</head>
+<body>
+	
+	<canvas id="can"></canvas>
+</body>
+</html>

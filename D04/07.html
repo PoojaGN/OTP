@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style>
+        canvas{
+            border: 1px solid gray;
+            display: block;
+            margin: 50px auto;
+        }
+    </style>
+    <script>
+        window.onload = init;
+        var d = {
+            d1 : [10,300,50,100],d2:[70,350,50,50],d3:[130,300,50,100],d4:[190,325,50,75],d5:[250,310,50,90],d6:[310,150,50,250]
+        };
+        var col=["#C1BAF2","#A299D8","#867EBF","#7068A8","#5D5496","#4B4284"];
+        
+        var ctx = null;
+        function init(){
+            ctx = document.getElementById("can").getContext("2d");
+            ctx.strokeStyle = "#EFEFEF";
+            for(var i = 0; i < 400; i+=5){
+                ctx.moveTo(i,0);
+                ctx.lineTo(i,400);
+                ctx.moveTo(0,i);
+                ctx.lineTo(400,i);
+            }
+            ctx.stroke();
+            for(var i=1;i<7;i++){
+            	if(d["d"+i][3]>=100)
+            		ctx.fillStyle="orange";
+            	else
+            	{
+            	ctx.fillStyle = col[i-1];
+            	}
+            ctx.fillRect(d["d"+i][0],d["d"+i][1],d["d"+i][2],d["d"+i][3]);            
+            }
+                }
+    </script>
+</head>
+<body>
+    <canvas id="can" width="400" height="400"> </canvas>
+</body>
+</html>

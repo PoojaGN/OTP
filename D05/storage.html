@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>storage</title>
+    <script>
+    	function storeFun(){
+            localStorage.un = document.getElementById("un").value;
+            localStorage.ue = document.getElementById("ue").value;
+        };
+        function readFun(){
+            alert(localStorage.un+" | " +localStorage.ue);
+        };
+    </script>
+</head>
+<body style="background-color:gray" >
+    
+        <table border="0" cellspacing="5" cellpadding="5">
+        <tr>
+            <td>User Name</td>
+            <td>
+                <input type="text" name="username"  id="un" />
+            </td>
+        </tr>
+        <tr>
+            <td>User eMail</td>
+            <td>
+                <input type="email"  name="useremail"  id="ue" />
+            </td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>
+                <button onclick="storeFun()" >submit</button>
+            </td>
+        </tr>
+    </table>
+    <hr />
+    <button onclick= "readFun">Read Values</button>
+</body>
+</html>

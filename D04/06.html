@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style>
+        canvas{
+            border: 5px dashed #001122;
+        }
+    </style>
+    <script>
+        window.onload = init;
+        var ctx = null;
+        var img=null;
+        var boxL=0;
+       
+        function init(){
+        	ctx=document.getElementById("can").getContext("2d");
+            img=new Image();
+           	img.src="images/horse.jpg";
+           	img.onload=function(){
+           		setInterval(anim,50);
+           	};
+        }
+        function anim(){
+       
+        	ctx.drawImage(img,boxL,0);
+        	boxL-=200;
+        	if(boxL<-1000){
+        		boxL=0;
+        };
+        }
+    </script>
+</head>
+<body>
+    <canvas id="can" width="200" height="200"></canvas>
+</body>
+</html>

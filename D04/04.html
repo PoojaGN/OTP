@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style>
+        canvas{
+            border: 5px solid #1eef0f;
+        }
+    </style>
+    <script>
+        window.onload = init;
+        var ctx = null;
+        function init(){
+            ctx = document.getElementById("can").getContext("2d");
+            setInterval(anim,25);
+        }
+        function anim(){
+            // ctx.clearRect(0,0,400,400);
+            // declare box position
+            var boxX = Math.round(Math.random()*400);
+            var boxY = Math.round(Math.random()*400);
+            // declare box dimension
+            var boxW = Math.round(Math.random()*50);
+            var boxH = Math.round(Math.random()*50);
+            // declare box color
+            var r = Math.round(Math.random()*255);
+            var g = Math.round(Math.random()*255);
+            var b = Math.round(Math.random()*255);
+            var a = Math.random();
+            // configure the box
+            ctx.fillStyle = "rgba("+r+","+g+","+b+","+a+")";
+            ctx.fillRect(boxX, boxY, boxW,boxH);
+        };
+    </script>
+</head>
+<body>
+    <canvas id="can" width="400" height="400"></canvas>
+</body>
+</html>
