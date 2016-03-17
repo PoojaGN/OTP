@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Child App</title>
+    <style>
+        body{
+            background-color: cyan;
+        }
+        textarea, button{
+            width: 300px;
+        }
+    </style>
+    <script>
+    window.onmessage = function(event){
+        if(event.origin === "http://mindtree.com"){
+            document.getElementById("log").value += event.data+"\n";
+        }else{
+            alert("you are not authorised to send me messages");
+        };
+    };
+    
+    function sendMessage(){
+            var val = document.getElementById("log").value;
+            window.parent.postMessage(val,"http://127.0.0.1:8020");
+    };
+    
+    </script>
+</head>
+<body>
+    <h1>Hello from the Child App</h1>
+    <hr/>
+    <table border="0" cellspacing="5" cellpadding="5">
+        <tr>
+            <td> User Message </td>
+            <td>
+                <textarea id="log"> </textarea>
+            </td>
+        </tr>
+        <tr>
+            <td> </td>
+            <td>  
+                <button onclick="sendMessage()">Chat</button>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

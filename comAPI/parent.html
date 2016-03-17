@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>parent</title>
+	<style>
+		body{
+			background-color:gray;
+			color:brown;
+		}
+	</style>
+	<script>
+		function sendMessage(){
+			var val=document.getElementById("log").value;
+			document.getElementById("child")
+			.contentWindow
+			.postMessage(val,"http://127.0.0.1:8020/");
+		}
+		window.onmessage=function(event){
+			//alert("i got a message");
+			//console.log(event);
+			document.getElementById("log").value+=event.data+"\n";
+		};
+	</script>
+</head>
+<body>
+	<h1>this is a parent page</h1>
+	<table>
+		<tr>
+			<td style="color:orange">user name</td>
+		</tr>
+		<tr>
+			<td><textarea id="log"></textarea></td>
+		</tr>
+		<tr>
+			<td>
+				<button onclick="sendMessage()">send</button>
+			</td>
+		</tr>
+	</table>
+	<hr />
+	<iframe  id="child" src="http://127.0.0.1:8020/comAPI/child.html" frameborder="3" width="500" height="500"></iframe>
+</body>
+</html>
