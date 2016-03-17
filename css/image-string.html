@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <script>
+        window.onload = function(){
+            var ctx = document.getElementById("can").getContext("2d");
+            var img = new Image();
+                img.src = "images/10.jpg";
+                img.onload = function(){
+                    ctx.drawImage(img,0,0);
+                    document.getElementById("ta").value = ctx.canvas.toDataURL();
+                    document.getElementById("r1").src = ctx.canvas.toDataURL();
+                    document.getElementById("r2").src = ctx.canvas.toDataURL();
+                    document.getElementById("r3").src = ctx.canvas.toDataURL();
+                    document.getElementById("r4").src = ctx.canvas.toDataURL();
+                    
+                };
+        };
+    </script>
+</head>
+<body>
+    <canvas id="can" width="210" height="210"> </canvas>
+    <hr/>
+    <textarea id="ta" rows="20" cols="100"> </textarea>
+    <img id="r1" />
+    <img id="r2" />
+    <img id="r3" />
+    <img id="r4" />
+</body>
+</html>
