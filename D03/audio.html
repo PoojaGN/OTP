@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <script>
+        function AudiPlay(){
+            document.getElementById("audi").play();
+            setInterval(checkVid, 10);
+        }
+        function AudiPause(){
+            document.getElementById("audi").pause();
+        }
+        function AudiStop(){
+           	var audi=document.getElementById("audi");
+           	audi.currentTime=0;
+           	audi.pause();
+        }
+    </script>
+</head>
+<body>
+    <h1 id="log"> </h1>
+    <audio id="audi" preload="metadata">
+        <source src="assets/music.mp3"> </source>
+        
+    </audio>
+    <button onclick="AudiPlay()">Play</button>
+    <button onclick="AudiPause()">Pause</button>
+    <button onclick="AudiStop()">Stop</button>
+</body>
+</html>

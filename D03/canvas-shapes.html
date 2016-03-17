@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<style>
+		canvas{
+			border:3px double #C3C3C3;
+		}
+	</style>
+	<script>
+		window.onload = init;
+		var ctx = null;
+		var boxX = -50;
+		function init(){
+			ctx = document.getElementById("can").getContext("2d");
+			setInterval(anim,5);
+		}
+		function anim(){
+			
+			ctx.clearRect(0,0,ctx.canvas.width,ctx.canvas.height);
+			ctx.fillStyle = "red";
+			
+			ctx.beginPath();
+			ctx.fillRect(boxX,50,50,50);// x,y,w,h;
+			ctx.closePath();
+			
+			ctx.beginPath();
+			ctx.fillStyle = "green";
+			ctx.fillRect(10,boxX,50,50);// x,y,w,h;
+			ctx.closePath();
+			
+			
+			boxX+=1;
+			if(boxX > 500){
+				boxX = -50;
+			}
+		};
+	
+	</script>
+</head>
+<body>
+	<canvas id="can" width="500" height="500"></canvas>
+</body>
+</html>

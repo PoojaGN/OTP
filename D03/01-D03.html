@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Geolocation</title>
+        <script>
+            if(navigator.geolocation){
+              navigator.geolocation.getCurrentPosition(succssFun,failFun);
+            };
+            function sucessFun (position) {
+              document.getElementById("lat").innerHTML=position.coords.latitude;
+              document.getElementById("lon").innerHTML=position.coords.longitude;
+              pos=position;
+            }
+            function failFun(error){
+                alert(error.message);
+            };
+            navigator.geolocation.getCurrentPosition(successFun, failFun);
+            function readmap(elm){
+            	document.getElementByID("map").src="https://maps.googleapis.com/maps/api/staticmap?center=pos.coords.latitude,pos.coords.longitude&zoom=14&size=400x400";
+            }
+            
+        </script>
+    </head>
+    <body>
+        <h1>Latitude :<span id="lat"></span></h1>
+        <h1>Longitude :<span id="lon"></span></h1>
+        <input onchange="readmap(this)" value="10" type="range" min="1" max="20" step="1"/>
+        <hr />
+        <img id="map"/>
+    </body>
+</html>

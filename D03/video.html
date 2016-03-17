@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <script>
+        function vidPlay(){
+            document.getElementById("vid").play();
+            setInterval(checkVid, 10);
+        }
+        function vidPause(){
+            document.getElementById("vid").pause();
+        }
+        function checkVid(){
+            document.getElementById("log").innerHTML = document.getElementById("vid").currentTime;
+        }
+        function vidStop(){
+           	var vid=document.getElementById("vid");
+           	vid.currentTime=0;
+           	vid.pause();
+        }
+    </script>
+</head>
+<body>
+    <h1 id="log"> </h1>
+    <video id="vid" poster ="images/abc.jpg">
+        <source src="assets/html5.webm.webm"> </source>
+        <source src="assets/html5.ogv.ogv"> </source>
+        <source src="assets/html5.mp4.mp4"> </source>
+        <track default src="assets/video.vtt" />
+        <object type="application/x-shockwave-flash" width="640" height="480">
+            <param name="movie" value="assets/html5.flash.swf" />
+        </object>
+    </video>
+    <button onclick="vidPlay()">Play</button>
+    <button onclick="vidPause()">Pause</button>
+    <button onclick="vidStop()">Stop</button>
+    <button onclick="checkVid()">Check</button>
+</body>
+</html>

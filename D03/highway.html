@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<script>
+		window.onload = init;
+		var ctx = null;
+		function init(){
+			ctx = document.getElementsByTagName("canvas")[0].getContext("2d");
+			
+			ctx.beginPath();
+			ctx.lineWidth = 45;
+			ctx.moveTo(50,50);
+			ctx.lineTo(500,500);
+			ctx.closePath();
+			ctx.stroke();
+			
+			ctx.beginPath();
+			ctx.strokeStyle = "#666666";
+			ctx.lineWidth = 35;
+			ctx.moveTo(50,50);
+			ctx.lineTo(500,500);
+			ctx.closePath();
+			ctx.stroke();
+			
+			ctx.beginPath();
+			ctx.strokeStyle = "white";
+			ctx.lineWidth = 5;
+			ctx.moveTo(50,50);
+			ctx.lineTo(60,60);
+			ctx.moveTo(70,70);
+			ctx.lineTo(110,110);
+			ctx.moveTo(120,120);
+			ctx.lineTo(160,160);
+			ctx.moveTo(170,170);
+			ctx.lineTo(210,210);
+			ctx.moveTo(220,220);
+			ctx.lineTo(260,260);
+			ctx.moveTo(270,270);
+			ctx.lineTo(310,310);
+			ctx.moveTo(320,320);
+			ctx.lineTo(310,310);
+			ctx.moveTo(350,350);
+			ctx.lineTo(360,360);
+			ctx.moveTo(400,400);
+			ctx.lineTo(410,410);
+			ctx.moveTo(420,420);
+			ctx.lineTo(460,460);
+			ctx.moveTo(470,470);
+			ctx.lineTo(500,500);
+			ctx.closePath();
+			ctx.stroke();
+		}
+	</script>
+</head>
+<body>
+	<canvas width="400" height="400"></canvas>
+</body>
+</html>
