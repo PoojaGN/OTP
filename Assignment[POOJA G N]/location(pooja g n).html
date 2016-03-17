@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Location object properties</title>
+	<style>
+	div{
+		background-color:#ae0023;
+		width:200px;
+		height:200px;
+		margin:50px auto;
+	}
+	</style>
+	<script>
+		alert("host: "+window.location.host);
+		alert("port: "+window.location.port);
+		alert("protocol: "+window.location.protocol);
+		alert("hostname: "+window.location.hostname);
+		alert("href: "+ window.location.href);
+		alert("pathname: "+window.location.pathname);
+		alert("origin: "+window.location.origin);
+
+		function assign(){
+			window.location.assign("http://www.linkedin.com");
+		};
+		function reload(){
+			window.location.reload();		
+		};
+		function replace(){
+			window.location.replace("http://www.wix.com");
+		};
+	</script>
+</head>
+<body>
+	<div>
+		<button onclick="assign()">assign</button>
+		<button onclick="reload()">reload</button>
+		<button onclick="replace()">replace</button>
+	</div>
+</body>
+</html>

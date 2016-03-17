@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>layout with float</title>
+	<style>
+	body{
+		margin:0px;
+		height:750px;
+			width: 1000px;
+			margin-left:300px;
+			border:2px solid black;
+	}
+		main{
+			background-color:#FFFF00;
+			width: 1000px;
+			height: 40px;				
+		}
+		.logoheader{
+			background-color:#abcdef;
+			height: 45px;
+		}
+		.logoheader .logo{
+			background-color: #424C00;
+			height: 45px;
+			width: 80px;
+		}
+        .container{
+            width: 850px;
+            height: 400px;
+            margin-left: 10px;
+        }
+      section header{
+        	width:710px;
+        	height:25px;
+        	margin-top:10px;
+        	margin-left:0px;
+        	float:left;
+        	background-color:#0000FF;
+        }
+        .box1{
+            background-color: red;
+            margin-top: 0px;
+        }
+        .box2{
+            background-color: green;
+            margin-top: 10px;
+        }
+        .box3{
+            background-color: blue;
+            margin-top: 10px;
+        }
+        .box1, .box2, .box3{
+            width: 700px;
+            height: 195px;
+            padding: 0px 5px; 
+            margin-left:0px;
+            float:left;
+        }
+        aside{
+            background-color: black;       
+      		height: 610px;
+      		width:260px;
+      		margin-top:-610px;
+      		margin-bottom:0px;
+      		margin-left:730px;
+           float :left;
+        }
+         aside header{
+       	 	background-color: blue;
+      		height: 25px;
+      		width:260px;
+      		margin-top:-20px;
+      		margin-bottom:0px;
+           float:left;
+        
+       }
+		
+        footer{
+        	width:1000px;
+        	height:55px;
+        	background-color: silver;
+        	margin-top:10px;
+        	float:left;
+        }
+      
+	</style>
+</head>
+<body>
+	<main>
+		<header class="logoheader">
+				<div class="logo"></div>
+			</header>
+		<section class="container">
+			<header> </header>
+			<article class="box1"> </article>
+			<article class="box2">  </article>
+			<article class="box3"> </article>
+		</section>
+		<aside>
+			<header> </header>
+		</aside>
+	</main>
+	<footer> </footer>
+</body>
+</html>
