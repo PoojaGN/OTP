@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>layout with position</title>
+	<style>
+		body{
+			margin:0px;
+			height:750px;
+			width: 1000px;
+			margin-left:300px;
+			border:2px solid black;
+			position:relative;
+		}
+		main{
+			background-color:#FFF200;
+			width: 1000px;
+			height: 40px;				
+		}
+		.logoheader{
+			background-color:#abcdef;
+			height: 45px;
+		}
+		.logoheader .logo{
+			background-color: #424C00;
+			height: 45px;
+			width: 80px;
+		}
+        .container{
+            width: 850px;
+            height: 400px;
+            margin-left: 10px;
+            position: relative;
+        }
+      section header{
+        	width:710px;
+        	height:25px;
+        	top:10px;
+        	position:absolute;
+        	background-color:#0000FF;
+        }
+        .box1{
+            background-color: cyan;
+            top: 30px;
+            position: absolute;
+        }
+        .box2{
+            background-color: olive;
+            top: 240px;
+            position: absolute;
+        }
+        .box3{
+            background-color: pink;
+            top: 450px;
+            position: absolute;
+        }
+        .box1, .box2, .box3{
+            width: 700px;
+            height: 200px;
+            padding: 0px 5px; 
+            margin-left:0px;
+        }
+        aside{
+            background-color: black;       
+      		height: 625px;
+      		width:260px;
+      		margin-top:-375px;
+      		margin-bottom:0px;
+      		margin-left:730px;
+           position:absolute;
+        }
+         aside header{
+       	 	background-color: blue;
+      		height: 20px;
+      		width:260px;
+      		top:-15px;
+      		margin-bottom:0px;
+           position:absolute;
+        
+       }
+		
+        footer{
+        	width:1000px;
+        	height:45px;
+        	background-color: silver;
+        	top:705px;
+        	position:absolute;
+        }
+      
+	</style>
+</head>
+<body>
+	<main>
+		<header class="logoheader">
+				<div class="logo"></div>
+			</header>
+		<section class="container">
+			<header> </header>
+			<article class="box1"> </article>
+			<article class="box2">  </article>
+			<article class="box3"> </article>
+		</section>
+		<aside>
+			<header> </header>
+		</aside>
+	</main>
+	<footer> </footer>
+</body>
+</html>
