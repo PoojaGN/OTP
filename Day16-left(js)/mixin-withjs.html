@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Mixins with Jquery</title>
+	<script src="lib/jquery.js"></script>
+	<script>
+	function extendCustom(){
+		for(var i=1;i<arguments.length;i++){
+			for(prop in arguments[i]){
+				arguments[0][prop]=arguments[i][prop];
+			}
+		}
+	}
+		var Person=function(arg1){
+			this.name=arg1;
+		};
+		var Animal = function(arg1){
+			this.name=arg1;
+		};
+		var move={
+			run:function(){
+				return this.name+" is running";
+			},
+			walk:function(){
+				return this.name+" is walking";
+			}
+		};
+		var talk = {
+			talk:function(){
+				return this.name+" is talking";
+			},
+			sing:function(){
+				return this.name+" is singing";
+			}
+		};
+		var code={
+			code:function(){
+				return this.name+" is coding";
+			},
+			codeon : "FrontEndTechnologies"
+		};
+		extendCustom(Person.prototype,move,talk,code);
+		extendCustom(Animal.prototype,move,talk);
+		var Person1  = new Person("Bruce");
+		var anim = new Animal("Cat");
+		console.log(Person1.walk());
+		console.log(Person1.talk());
+		console.log(Person1.sing());
+		console.log(Person1.code());
+		console.log(Person1.codeon);
+		console.log(anim.walk());
+		console.log(anim.run());
+		console.log(anim.sing());
+		console.log(anim.talk());
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

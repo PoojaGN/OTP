@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Mixins with Jquery</title>
+	<script src="lib/jquery.js"></script>
+	<script>
+		var Person=function(arg1){
+			this.name=arg1;
+		};
+		var Animal = function(arg1){
+			this.name=arg1;
+		};
+		var move={
+			run:function(){
+				return this.name+" is running";
+			},
+			walk:function(){
+				return this.name+" is walking";
+			}
+		};
+		var talk = {
+			talk:function(){
+				return this.name+" is talking";
+			},
+			sing:function(){
+				return this.name+" is singing";
+			}
+		};
+		var code={
+			code:function(){
+				return this.name+" is coding";
+			},
+			codeon : "FrontEndTechnologies"
+		};
+		$.extend(Person.prototype,move,talk,code);
+		$.extend(Animal.prototype,move,talk);
+		var Person1  = new Person("Bruce");
+		var anim = new Animal("Cat");
+		console.log(Person1.walk());
+		console.log(Person1.talk());
+		console.log(anim.sing());
+		console.log(anim.talk());
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

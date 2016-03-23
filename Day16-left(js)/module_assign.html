@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Module Assignment</title>
+	<script src="lib/jquery.js"></script>
+	<script src="lib/underscore.js"></script>
+	<script src="lib/bootstrap.js"></script>
+	<script>
+		var box=(function(){
+			var count=1;
+			var genId=function(){
+				return "box"+count++;
+				
+			};
+			var create =function(tagName,uid){
+				var el=document.createElement(tagName);
+				var eid=uid||genId();
+				el.innerHTML=eid;
+				el.setAttribute("class","box");
+				return el;
+			};
+			return {
+				create:create
+			};
+		}());
+		document.addEventListener("DOMContentLoaded", function(){
+			
+		});
+	</script>
+	
+</head>
+<body style="margin:0px auto;">
+	<input type="text" id="text"/>
+	<button id="b1" onclick="function()">click</button>
+	<br />
+	<div style="width:800px; height:500px; border:1px solid blue; background-color: cyan" ></div>
+</body>
+</html>

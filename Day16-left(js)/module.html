@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>module pattern vehaviour</title>
+	<script>
+		var mod=(function(){
+			var fname="bruce";
+			var lname="wayne";
+			var secret="Hai";
+			var obj={
+				fn:fname,
+				ln:lname
+			};
+			return obj;	
+		}());
+		console.log(mod.fn);
+		//console.log(mod.secret);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

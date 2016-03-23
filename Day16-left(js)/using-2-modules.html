@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Module</title>
+    <script src="lib/jquery.js"></script>
+    <script src="mymod.js"></script>
+    <script>
+        window.onload = function(){
+                var mod = (function($,mm){
+                    $("body").append(mm.message)
+                
+                            }(jQuery,mymod))
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
+
+
+
+
