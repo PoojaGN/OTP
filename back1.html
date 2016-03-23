@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>backbone</title>
+	<script src="lib/jquery.js"></script>
+	<script src="lib/underscore.js"></script>
+	<script src="lib/backbone.js"></script>
+	
+	<script>
+		var hero=Backbone.Model.extend({
+			defaults:{
+				title:"super hero",
+				initialize:function(){
+					console.log("an instance was created");
+				},
+				validate:function(args){
+					console.log("checking validity");
+					if(args.power<0 || args.power<10){
+						return "power enetered is invalid";
+					}
+				}
+				
+				}			
+		});
+			var batman=new hero({
+				fname:"Bruce",
+				lname:"wane",
+				power:7
+			});
+			batman.set("power",33,{
+				validate:true
+			});
+			console.log(batman.get("power"));
+			console.log(batman.validationError);
+			console.log(batman.isvalid);
+			
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

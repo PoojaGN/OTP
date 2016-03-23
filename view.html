@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>view</title>
+	<script src="lib/jquery.js"></script>
+	<script src="lib/underscore.js"></script>
+	<script src="lib/backbone.js"></script>
+	<script>
+		var heroview=Backbone.View.extend({
+			tagName:"li",
+			className:"orangebox",
+			initialize:function(){
+				console.log("view initialized");
+			},
+			render:function(){
+				return this;
+			}
+		});
+		var hview=new heroview();
+		
+		window.onload=function(){
+			var ele=hview.render().el;
+			ele.html("Hello").appendTo("body");
+		}
+		
+	</script>
+</head>
+<body>
+	<!-- default ele of a view in backbone is a div tag -->
+</body>
+</html>
