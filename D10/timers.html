@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>timers</title>
+	<script>
+	/*
+		var s=setInterval(function(){
+			console.log("hello at: "+new Date());
+		},1000);
+		addEventListener("load",function(){
+			document.getElementsByTagName("button")[0]
+			.addEventListener("click",function(){
+				clearInterval(s);
+			});
+		});
+		*/
+		var s=setTimeout(function(){
+			console.log("hello at: "+new Date());
+		},5000);
+		addEventListener("load",function(){
+			document.getElementsByTagName("button")[0]
+			.addEventListener("click",function(){
+				clearTimeout(s);
+			});
+		});
+	</script>
+</head>
+<body>
+	<button>stop interval</button>
+</body>
+</html>

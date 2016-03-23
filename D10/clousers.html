@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>clousers</title>
+	<script>
+	/*
+		var fun=function(){
+			var text="my fullname";
+			this.fname="pooja";
+			this.lname="gn";
+			
+			return function(){
+				return text;
+			};
+		};
+		
+		var of=fun();
+			console.log(of());
+*/
+var msg=function(n){
+	var temp=n;
+	return function(message){
+		for(var i=0;i<temp;i++){
+			console.log(i+" : "+ message);
+		}
+	};
+};
+	var fun=msg(5);
+	fun("hello,welcome to music room");
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

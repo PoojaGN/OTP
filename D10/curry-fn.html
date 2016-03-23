@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>curry function</title>
+	<script>
+		var mainfun=function (greeting){
+				
+			return function(name){
+				console.log(greeting +" , "+ name) ;
+			};
+		};
+		var nestedfun=mainfun("hello");
+		
+		nestedfun("batsman");
+		nestedfun("spiderman");
+		mainfun("hi") ("pooja");
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>target</title>
+	<script>
+		addEventListener("load", function(){
+			document.getElementsByTagName("button")[0]
+				.addEventListener("click",closeFun);
+				
+			document.getElementsByTagName("button")[1]
+				.addEventListener("click",closeParentFun);				
+		});
+		function closeFun(){
+			//window.close();
+			//close();
+			self.close();
+		}
+		function closeParentFun(){
+			opener.close();
+		}
+	</script>
+</head>
+<body bgcolor="cyan">
+	<button id="close">close me</button>
+	<button id="closeparent">close caller window</button>
+</body>
+</html>
