@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Heros list</title>
+    <style>
+        .box{
+            width: 1200px;
+            height: 50px;
+            background-color: #333;
+            margin: auto;
+            overflow: auto;
+        }
+        .prod{
+            width: 200px;
+            padding: 5px;
+            background-color: silver;
+        }
+        .prod img{
+            max-width : 100%;
+            background-color: silver;
+            float:left;
+        }
+        .prod h1,h2{
+            margin: 0px;
+            text-align: center;
+            font-family: Comic Sans MS, Helvetica, sans-serif;
+            color: #333;
+        }
+        .prod div{
+            width: 200px;
+            height: 100px;
+            overflow: auto;
+            font-family: Arial;
+            padding: 5px;
+            box-sizing:border-box;
+            background-color: white;
+            color: #333;
+            text-align: center;
+        }
+    </style>
+    <script>
+        var xhr=new XMLHttpRequest;
+        xhr.addEventListener("readystatechange",changeHandler);
+        xhr.open("get","nero.xml",true);
+        xhr.send();
+        var data=null;
+        function changeHandler(){
+        	
+        	console.log(xhr.readyState);
+        	if(xhr.readyState==4 && xhr.status==200){
+        		data=xhr.responseXML;
+        		for(var i=0;i<data.document.getElementsByTAgName("hTitle").length-1;i++){
+        		data=document.getElementsByClassName("box")[0].innerHTML="<div class='prod'><h1></h1><img src=''/><div></div></div>";
+        		}
+         	}
+        }
+        
+    </script>
+</head>
+<body>
+    <div class="box"></div>
+    
+        <div class='prod'>
+            <h1>Superman</h1>
+            <img src='images/superman.jpg'/>
+            <h2>Call : <span>123</span></h2>
+            <div>Superman is a comic book superhero who appears in comic books by DC Comics.
+                He is widely considered to be an American cultural icon.
+                Created by writer Jerry Siegel and artist Joe Shuster in 1932 while both were living in Cleveland, Ohio, and sold to Detective Comics, Inc. (later DC Comics) in 1938, Superman has appeared in various radio serials, television programs, films, newspaper strips, and video games.
+            </div>
+        </div>
+    
+    
+</body>
+</html>
