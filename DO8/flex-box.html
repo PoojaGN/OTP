@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style>
+        .container{
+            height: 300px;
+            background-color: #333;
+            display: flex;
+            padding:5px;
+           /* flex-wrap:wrap;
+            flex-direction:row-reverse;
+           flex-wrap:nowrap;(default)
+          flex-wrap:wrap-reverse;
+         flex-flow:row wrap;(takes direction and wrap)
+        
+        justify-content:flex-start;(default)
+       	justify-content:flex-end;
+       	justify-content:center;
+       	justify-content:space-around;
+       	justify-content:space-between;
+       	flex-flow:coloum wrap;*/
+        }
+        .box{
+        	width:100px;
+            height: 100px;
+            font-family: serif;
+            font-size: 20px;
+            color: #0fd;
+            font-weight: bold;
+            text-align: center;
+            line-height: 100px;
+            /*
+            flex-grow:1px;
+            flex-shrink:1px;
+            flex-basis:150px;  		
+       		flex: 1 1 150px;*/
+       		
+        }
+        .box1{
+            background-color: #B774F2;
+            order:2;
+        }
+        .box2{
+            background-color: #F274D1;
+             order:1;
+        }
+        .box3{
+            background-color: #9ce96d;
+             order:2;
+        }
+        .box4{
+            background-color: #92F074;
+             order:3;
+        }
+        .box5{
+            background-color: olive;
+             order:2;
+        }
+        .box6{
+            background-color: #7473F2;
+             order:1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box box1">1</div>
+        <div class="box box2">2</div>
+        <div class="box box3">3</div>
+        <div class="box box4">4</div>
+        <div class="box box5">5</div>
+        <div class="box box6">6</div>
+    </div>
+</body>
+</html>
