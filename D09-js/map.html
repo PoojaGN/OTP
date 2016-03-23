@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<script>
+		var arr=[27,2,21,435,11,76,34,33,6,96];
+		/*
+		var inrarr=arr.map(function (v,i,a){
+			return "INR "+v;
+		});
+		console.log(inrarr);
+		
+		var bornafter15=arr.filter(function(v,i,a){
+			return v<50;
+		});
+		console.log(bornafter15);
+		
+		var bornafter15=arr.some(function(v,i,a){
+			return v<50;
+		});
+		console.log(bornafter15);
+		
+		var bornafter15=arr.every(function(v,i,a){
+			return v<50;
+		});
+		console.log(bornafter15);
+		*/
+		var bornafter15=arr.reduce(function(v,i,a){
+			return v<50;
+		});
+		console.log(bornafter15);
+		
+		
+	 </script>
+</head>
+<body>
+	
+</body>
+</html>

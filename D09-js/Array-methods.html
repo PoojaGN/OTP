@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Array methods</title>
+	<script>
+		alert("open console");
+		var arr=[12,13,14,15,16];
+	    console.log(arr);
+		console.log("Length of array :"+arr.length);
+		
+		arr.push(21);
+		console.log("array after pushing 21 : "+ arr);
+		
+		var num = [23,45,67,46,34];
+		console.log("number to string: "+num.toString());
+		
+		console.log("join operation: "+num.join(" & "));
+		
+		console.log("pop operation: "+num.pop());
+		//alert(arr.length);
+		
+		console.log("shift operation: "+ arr.shift()); // removes first element and moves all other element to lower index returns removed element
+		
+		console.log("unshift operation: "+ arr.unshift(55));//adds new element and return array length
+	
+		//alert(arr[5]);
+	
+		var arrnew=["00"];
+		arrnew.splice(1,0,"@#$");//(position,number of ele removed,new ele)
+		console.log("array after splice operation: "+arrnew);
+	
+		var arr=[13,43,2,65,7,90];
+		
+		console.log("sorted array(13,43,2,65,7,90) :"+arr.sort(function(a,b){return a>b;}));
+		
+		console.log("reversed array: "+arr.reverse());
+		
+		var arr=["abc","acb","cba","bca"];
+		//document.write(arr.slice(2));
+		console.log("slice array [abc,acb,cba,bca] at 1,3 :" +arr.slice(1,3));
+		
+		var arr1=["abcde"];
+		var arr2=["ijklm"];
+		console.log("concat of array abcde and ijklm:"+ arr1.concat(arr2));
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
