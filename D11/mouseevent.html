@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>mouse event</title>
+	<style>
+		div{
+			 width:100px; 
+			 height:100px; 
+			 background-color: green;
+			 margin:0px auto;
+		}
+	</style>
+	<script>
+		window.onload=function(){
+			var box=document.getElementByClassName("box")[0];
+			box.document.addEventListener("mouseover",eventfun);
+			box.document.addEventListener("mouseout",eventfun);
+			box.document.addEventListener("mouseup",eventfun);
+			box.document.addEventListener("mousedown",eventfun);
+			box.document.addEventListener("click",eventfun);
+		};
+		function eventfun(event){
+			document.getElementById("log").innerHTML+=event.type+"\n";
+		}
+		</script>
+</head>
+<body>
+	<div class="box"></div>
+	<textarea name="" id="log" cols="50px" rows="20px" ></textarea>	
+</body>
+</html>

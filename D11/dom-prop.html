@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Pooja</title>
+	<style>
+		
+	</style>
+	<script>
+	/*
+	 * 10px black;
+	 */
+		var arr = ["solid","dotted","double","ridge","dashed"];
+		window.onload = function(){
+			// document.body.textContent = "Hello there";
+			// document.title = "Batman";
+			// document.forms[1].innerHTML = "<input type='text'/>";
+			// document.forms["foo1"].innerHTML = "<input type='text'/>";
+			// document.foo1.innerHTML = "<input type='text'/>";
+			// document.images[0].setAttribute("style","border: 10px solid blue");
+			/*
+			for(var i = 0; i < document.images.length; i++){
+				document.images[i].setAttribute("style","border : 10px "+arr[i]+" red");
+			}
+			 */
+			var elm = document.getElementsByTagName("img")[0];
+			elm.removeAttribute("src");
+			elm.setAttribute("src","images/005.jpg");
+			alert(elm.getAttribute("src"));
+		};
+	</script>
+</head>
+<body>
+	<h1 name="box"></h1>
+	<form action="#" name="foo1">
+		<label>user name</label>
+		<input type="" />
+	</form>
+	<hr/>
+	<form action="#" name="foo2"></form>
+	<hr/>
+	<img src="images/001.jpg" alt="" width="200" height="200" />
+	<br />
+	<img src="images/002.jpg" alt="" width="200" />
+	<br />
+	<img src="images/003.jpg" alt="" width="200" />
+	<br />
+	<img src="images/004.jpg" alt="" width="200" />
+	<br />
+	<img src="images/005.jpg" alt="" width="200" />
+	<br />
+</body>
+</html>

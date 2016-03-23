@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>event</title>
+	<script>
+	window.onload=function(){
+		document.body.addEventListener("click",clickfun);
+	};
+		function clickfun(){
+			event.target.innerHTML="clicked";
+		}
+	</script>
+</head>
+<body>
+	<button>one</button>
+	<button>two</button>
+	<button>three</button>
+	<button>four</button>
+	<button>five</button>
+</body>
+</html>
