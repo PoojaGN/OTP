@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title></title>
+	<link href="JQuery/jquery-ui.css" rel="stylesheet">
+	<script src="JQuery/external/jquery/jquery.js"></script>
+	<script src="JQuery/jquery-ui.js"></script>
+	<script>
+  $(function() {
+    $( "#tabs" ).tabs({
+      beforeLoad: function( event, ui ) {
+        ui.jqXHR.fail(function() {
+          ui.panel.html(
+            "Couldn't load this tab. We'll try to fix this as soon as possible. " +
+            "If this wouldn't be a demo." );
+        });
+      }
+    });
+  });
+  </script>
+</head>
+<body>
+	<h1>Edit</h1>
+	
+	<div id="tabs">
+  <ul>
+    <li><a href="#tabs-1">Organisation</a></li>
+    
+  </ul>
+  <div id="tabs-1">
+    
+	
+	<table  width:"700px" height:"200px" padding:"10px;" cellpadding="5">
+		<tr>
+			<th>Organization name: <td><input type="text" value="Walmart"/></td></th>
+		
+			<th>Organization type: <td> <input type="text" value="Retail"/></td></th>
+		</tr>
+		
+		<tr>
+			<th>Email-id: <td> <input type="text" value="Walmart@store.com" /></td></th>
+		
+			<th>Address line-1: <td><input type="text" value="13-A Shopping mall"/></td></th>
+		</tr>
+		<tr>
+			<th>Address line-2: <td><input type="text" value="Supper shopper street"/></td></th>
+		
+			<th>City:<td><input type="text" value="London"/></td> </th>
+		</tr>
+		<tr>
+			<th>Zip: <td><input type="text" value="628006"/></td></th>
+		
+			<th>Organization email-id:<td> <input type="text" value="Walmart@store.com"/></td></th>
+		</tr>
+		<tr>
+			<th>Contact number-1:<td> <input type="text" value="91-23456781"/></td></th>
+		
+			<th>Contact number-2:<td><input type="text" value="91-23456781"/></td></th>
+		</tr>
+		<tr>
+			<th>Contact number-3: <td><input type="text" value="91-23456781"/></td></th>
+		
+			<th>Contact number-4: <td><input type="text" value="91-23456781"/></td></th>
+		</tr>
+	</table>
+	 </div>
+	 <div style="margin-left:400px">
+		
+		<input type="submit" value="update" style="margin-left: 300px;">
+		<input type="submit" value="cancel">
+	</div>
+</body>
+</html>
