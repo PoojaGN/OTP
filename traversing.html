@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<script src="lib/jquery.js"></script>
+	<script>
+		$(function(){
+			//alert($("p").size());
+			//alert($("p").get(3).innerHTML);
+			//alert($("p")[1].innerHTML);
+			//$("ul").has(".x").css("border","2px solid black");
+			//$("ul").find(".x").css("border","2px solid black");
+			$("li").each(function(i,elm){
+                console.log(i+" | "+elm);
+                alert("i found a li tag");
+                alert(elm.innerHTML);
+                elm.innerHTML += " hello there";
+                elm.style = "border: 2px solid red";
+                $(elm).css("border","2px solid red");
+          });
+		});
+	</script>
+</head>
+<body>
+	<ul>
+		<li class="x"></li>
+		<li></li>
+		<li></li>
+	</ul>
+	<p class="x">paragraph 1</p>
+	<p>paragraph 2</p>
+	<p>paragraph 3</p>
+	<p>paragraph 4</p>
+	<p>paragraph 5</p>
+	<p>paragraph 6</p>
+</body>
+</html>

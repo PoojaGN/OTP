@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Assignment</title>
+	<style>
+		li{
+			list-style: none;
+			width: 180px;
+			height: 50px;
+			padding: 5px;
+			margin: 5px;
+			border: 1px solid gray;
+			background-color: #f2f2f2;
+		}
+		li:hover{
+			list-style: none;
+			width: 180px;
+			height: 50px;
+			padding: 5px;
+			margin: 5px;
+			border: 1px solid gray;
+			color : white;
+			background-color: gray;
+		}
+		li a{
+			line-height: 50px;
+			vertical-align: middle;
+			text-decoration: none;
+			font-family: Arial;
+			color: #333;
+		}
+		li a img{
+			margin-left: 20px;
+		}
+	</style>
+	<script src="lib/jquery.js"></script>
+	<script>
+		$(function(){
+/*
+	$("a[href $='batman.jpg']").append("<img src='images/batman.jpg' width='40' align='absmiddle'/>");
+	$("a[href $='ironman.jpg']").append("<img src='images/ironman.jpg' width='40' align='absmiddle'/>");
+	$("a[href $='superman.jpg']").append("<img src='images/superman.jpg' width='40' align='absmiddle'/>");
+	$("a[href $='supergirl.jpg']").append("<img src='images/supergirl.jpg' width='40' align='absmiddle'/>");
+ */
+/*
+	$("ul")
+	.find("a[href $= 'batman.jpg']")
+	.append("<img src='images/batman.jpg' width='40' align='absmiddle'/>")
+	.end()
+	.find("a[href $= 'superman.jpg']")
+	.append("<img src='images/superman.jpg' width='40' align='absmiddle'/>")
+	.end()
+	.find("a[href $= 'supergirl.jpg']")
+	.append("<img src='images/supergirl.jpg' width='40' align='absmiddle'/>")
+	.end()
+	.find("a[href $= 'ironman.jpg']")
+	.append("<img src='images/ironman.jpg' width='40' align='absmiddle'/>")
+ */
+
+/*
+$("a").each(function(i, elm){
+	var elm = $(elm);
+	var path = elm.attr("href");
+	elm.append("<img src='"+path+"' width='40' align='absmiddle'/>")
+})
+ */
+
+
+for (var i = 0; i < $("a").length; i++){
+	// var path = $("a").eq(i).attr("href");
+	var path = $("a")[i].getAttribute("href");
+	$("a").eq(i).append("<img src='"+path+"' width='40' align='absmiddle'/>");
+};
+ 
+		});
+	</script>
+</head>
+<body>
+	<ul>
+		<li><a href="images/batman.jpg">Download Link</a></li>
+		<li><a href="images/ironman.jpg">Download Link</a></li>
+		<li><a href="images/superman.jpg">Download Link</a></li>
+		<li><a href="images/supergirl.jpg">Download Link</a></li>
+		<li><a href="images/ironman.jpg">Download Link</a></li>
+		<li><a href="images/batman.jpg">Download Link</a></li>
+		<li><a href="images/superman.jpg">Download Link</a></li>
+		<li><a href="images/superman.jpg">Download Link</a></li>
+		<li><a href="images/supergirl.jpg">Download Link</a></li>
+		<li><a href="images/ironman.jpg">Download Link</a></li>
+	</ul>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

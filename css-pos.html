@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<style>
+		.box{
+			width: 400px;
+			height: 400px;
+			background-color: #333;
+			margin: auto;
+			position: relative;
+		}
+		.nestedBox{
+			width: 200px;
+			height: 200px;
+			background-color: orange;
+			position: absolute;
+			left: 50px;
+			top: 50px;
+		}
+		.targetBox{
+			width: 100px;
+			height: 100px;
+			background-color: yellow;
+			position: absolute;
+		}
+	</style>
+	<script src="lib/jquery.js"></script>
+	<script>
+		$(function(){
+			// offset is from viewport
+			// position is from relative parent
+			var ofst = $(".nestedBox").offset();
+			var pos = $(".nestedBox").position();
+			// alert("Offset is | "+ofst.left+" \nPosition is  | "+pos.left);
+			var vals = {
+				left : $(".nestedBox").width()+pos.left+"px",
+				top : pos.top
+			};
+			$(".targetBox").css(vals);
+		});
+	</script>
+</head>
+<body>
+	<div class="box">
+		<div class="nestedBox"> </div>
+		<div class="targetBox"> </div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!doctype html>   <!-- display image with link-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Assignment</title>
+    <style>
+        li{
+            background-color: silver;
+            width: 150px;
+            padding: 5px;
+            margin: 5px;
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+            color: #333;
+            font-family: arial
+        }
+    </style>
+    
+    <script src="lib/jquery.js"></script>
+    <script>
+    $(function(){
+        $("ul")
+        .find("a[href $= 'batman.jpg']")
+        .append("<img src='images/batman.jpg' width='40' align='absmiddle'/>")
+        .end()
+        .find("a[href $= 'superman.jpg']")
+        .append("<img src='images/superman.jpg' width='40' align='absmiddle'/>")
+        .end()
+        .find("a[href $= 'supergirl.jpg']")
+        .append("<img src='images/supergirl.jpg' width='40' align='absmiddle'/>")
+        .end()
+        .find("a[href $= 'ironman.jpg']")
+        .append("<img src='images/ironman.jpg' width='40' align='absmiddle'/>");
+
+    });
+
+    </script>
+</head>
+<body>
+    
+    <ul>
+        <li><a href="images/batman.jpg">Download Link</a></li>
+        <li><a href="images/ironman.jpg">Download Link</a></li>
+        <li><a href="images/superman.jpg">Download Link</a></li>
+        <li><a href="images/supergirl.jpg">Download Link</a></li>
+        <li><a href="images/ironman.jpg">Download Link</a></li>
+        <li><a href="images/batman.jpg">Download Link</a></li>
+        <li><a href="images/superman.jpg">Download Link</a></li>
+        <li><a href="images/superman.jpg">Download Link</a></li>
+        <li><a href="images/supergirl.jpg">Download Link</a></li>
+        <li><a href="images/ironman.jpg">Download Link</a></li>
+    </ul>
+
+</body>
+</html>

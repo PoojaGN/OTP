@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <script src="lib/jquery.js"></script>
+    <script>
+    // DOMContentLoaded
+        $(function(){
+          //$("img[alt]").css("border","2px solid red");
+          //$("img[width='100px']").css("border","2px solid red");
+          //$("img[width!='100px']").css("border","2px solid red");
+         // $("img[alt^='00']").css("border","2px solid red");
+          //$("img[alt$='1']").css("border","2px solid red");
+          //$("img[alt*='1']").css("border","2px solid red");
+          $("img[alt*='4'][type='']").css("border","2px solid red");
+        });
+    </script>
+</head>
+<body>
+    <img src="images/001.jpg" alt='001' type="" width="100px"/>
+    <img src="images/002.jpg" alt="002" width="100px"/>
+    <img src="images/003.jpg" alt="003" width="90px"/>
+    <img src="images/004.jpg" alt="004" type='' width="100px"/>
+    <img src="images/005.jpg" alt="005" width="90px"/>
+</body>
+</html>

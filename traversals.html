@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<style>
+		.box{
+			width:300px;
+			background-color:"orange";
+			
+		}
+		div{
+			background-color:"pink";
+		}
+		ul{
+			background-color:"silver";
+		}
+	</style>
+	<script>
+		//$("li").wrap()("<div/>");
+		//$("li").wrap()(".box");
+		//$("li").wrapAll()("");
+		//$("li").wrapAll()(".box");
+		$("li").wrapInner("<div/>");
+		$("li").unwrap();
+		$("li").empty();
+		$("li").remove();
+		$("ul").unwrap();
+		$("ul").detach();
+	$("ul").on("click",function(){
+		alert("you clicked a ul tag");
+	});
+	function removeback(){
+		elm=$("ul").remove();
+		elm=$("ul").detach();
+		
+	}
+	function addBack(){
+		$("body").append(elm);
+	}
+	</script>
+</head>
+<body>
+	<ul>
+		<li>list item 1</li>
+		<li>list item 2</li>
+		<li>list item 3</li>
+		<li>list item 4</li>
+		<li>list item 5</li>
+	</ul>
+	<div class="box"></div>
+</body>
+</html>
