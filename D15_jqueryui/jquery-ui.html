@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<style>
+	/*
+			.box{
+				width:100px;
+				height:100px;
+				background-color: #666666;
+				border:0.5em solid blue;
+			}
+			#draggable { width: 150px; height: 150px; padding: 0.5em; }
+		*/
+			#draggable, #draggable2, #draggable3 { width: 100px; height: 100px; padding: 0.5em; float: left; margin: 0 10px 10px 0;background-color:gray; }
+  </style>
+	</style>
+	<script src="lib/jquery.js"></script>
+	<script src="lib/jquery-ui.js"></script>
+	
+	<script>
+		$(function() {
+    $( "#draggable" ).draggable({ scroll: true });
+    $( "#draggable2" ).draggable({ scroll: true, scrollSensitivity: 100 });
+    $( "#draggable3" ).draggable({ scroll: true, scrollSpeed: 100 });
+  });
+	</script>
+</head>
+<body>
+	<div id="draggable" class="ui-widget-content">
+  <p>Scroll set to true, default settings</p>
+</div>
+ 
+<div id="draggable2" class="ui-widget-content">
+  <p>scrollSensitivity set to 100</p>
+</div>
+ 
+<div id="draggable3" class="ui-widget-content">
+  <p>scrollSpeed set to 100</p>
+</div>
+ 
+<div style="height: 5000px; width: 1px;"></div>
+	
+</body>
+</html>
