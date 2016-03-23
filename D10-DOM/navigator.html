@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>navigator</title>
+	<style>
+	
+	</style>
+	<script>
+			alert("appCodeName : " +window.navigator.appCodeName);
+			alert("appName: "+ window.navigator.appName);
+			alert("appVersion: "+window.navigator.appVersion);
+			alert("cookieEnabled: " +window.navigator.cookieEnabled);
+			alert("geolocation: "+window.navigator.geolocation);
+			alert("language: "+window.navigator.language);
+			//alert("online: "+window.navigator.online);
+			alert("platform: "+window.navigator.platform);
+			alert("product: "+window.navigator.product);
+			alert("userAgent: "+window.navigator.userAgent);
+			
+		function javaEnabled(){
+			alert(window.navigator.javaEnabled());
+		}
+	</script>
+</head>
+<body>
+	<button onclick="javaEnabled()">java enabled</button>
+	</body>
+</html>

@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>DOM Selection</title>
+    <script>
+    /*
+        window.onload = function(){
+            // alert(document.children[0].children.length);
+            //alert(document.children[0].tagName);
+            // alert(document.children[0].children[0].tagName);
+            //alert(document.children[0].children[1].children.length);
+            // alert(document.children[0].children[0].nextSibling.tagName);
+            // alert(document.body.children[0].tagName);
+            // document.body.children[0].innerHTML = "Sangeetha";
+            // document.body.children[0].innerHTML = "<img src='images/grass.png'/>";
+            // document.body.children[0].textContent = "<img src='images/grass.png'/>";
+             //document.body.children[0].outerHTML = "<li> I am a List Item </li>";
+          };  
+            */
+            window.onload=function(){
+            	alert(document.getElementsByName("foo")[0].tagName);
+            	alert(document.querySelector(".item").innerHTML);
+            	alert(document.querySelectorAll(".item")[1].innerHTML);
+            	alert(document.querySelector("[onclick ^ = 'callFun']")[1].innerHTML);
+            	
+            	document.querySelector("[onclick ^ = 'callFun']").innerHTML;
+            	document.querySelector("[onclick ^ = 'callFun']")[1].innerHTML;
+                  	
+            } ;
+             function callFun(){
+             	alert("hello it is list 2");
+             }    
+    </script>
+</head>
+<body>
+
+    <ul name="foo">
+    	<li onclick='callFun()'>list item 1</li>
+    	<li class="item">list item 2</li>
+    	<li >list item 3</li>
+    	<li class="item">list item 4</li>
+    	<li onclick='callFun()'>list item 5</li>
+    </ul>
+</body>
+</html>
+

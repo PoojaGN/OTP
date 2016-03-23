@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head><!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style>
+        #box{
+            height: 500px;
+            background-color: #333;
+            overflow: auto;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            document.querySelector("button")
+            .addEventListener("click", createBox);
+            
+            document.querySelectorAll("button")[1]
+            .addEventListener("click", deleteFirstBox);
+            
+            document.querySelectorAll("button")[2]
+            .addEventListener("click", deleteLastBox);
+        };
+        function createBox(){
+            var elm = document.createElement("div");
+            var r = Math.round(Math.random()*255);
+            var g = Math.round(Math.random()*255);
+            var b = Math.round(Math.random()*255);
+            elm.setAttribute("style","width: 50px; height: 50px; background-color: rgb("+r+","+g+","+b+"); margin: 5px; float : left ");
+            document.getElementById("box").appendChild(elm);
+        }
+        function deleteFirstBox(){
+            var elm = document.getElementById("box").firstChild;
+            if(elm){
+                document.getElementById("box").removeChild(elm);
+            }else{
+                alert("you are out of boxes");
+            }
+        }
+        function deleteLastBox(){
+            var elm = document.getElementById("box").lastChild;
+            if(elm){
+                document.getElementById("box").removeChild(elm);
+            }else{
+                alert("you are out of boxes");
+            }
+        }
+    </script>
+</head>
+<body>
+    <button>Create A Box</button>
+    <button>Delete First Box</button>
+    <button>Delete Last Box</button>
+    <hr/>
+    <div id="box"> </div>
+
+</body>
+</html>
