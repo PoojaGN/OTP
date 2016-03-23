@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<script src="lib/jquery.js"></script>
+	<script src="lib/underscore.js"></script>
+	<script src="lib/backbone.js"></script>
+	<script>
+		var Person= Backbone.Model.extend({
+			defaults:{
+				fname:"Bruce",
+				lname:"wayne"
+			},
+			increasePower:function(){
+				var incval=this.get("power");
+				this.set("power",incval+1);
+			},
+			decreasePower:function(){
+				var decval=this.get("power");
+				this.set("power",decval-1);
+			}
+		});
+		var person=new Person({
+			power:7,
+			city:"Goutham"
+		});
+		
+		$(function(){
+			$("#inc").on("click", function(){
+				person.increasePower();
+				$("#log").text(person.get("power"))
+			})	
+		});
+		$(function(){
+			$("#dec").on("click", function(){
+				person.decreasePower();
+				$("#log").text(person.get("power"))
+			})	
+		});
+		$(function(){
+			$("#city").on("click", function(){
+				person.set("city","Kalinga");
+				console.log(person.city);
+				$("#log").text(person.get("city"))
+			})	
+		});
+		
+		person.on("change:power",function(){
+			$("#log").text(person.get("power"));
+		});
+		
+		person.on("change:city",function(){
+			
+			$("#log").text(person.get("city"));
+		});
+		// console.log(person.get("fname"));
+		// person.set("fname","pooja");
+		// console.log(person.get("fname"));
+		// console.log(person.get("power"));
+		// console.log(person.get("city"));
+		// console.log(person.get("power"));
+		// person.increasePower();
+		// console.log(person.get("power"));
+		// person.decreasePower();
+		// console.log(person.get("power"));
+		// person.set("fname","abc");
+		// console.log(person.get("fname"));
+		// person.set("age","22");
+		// console.log(person.get("age"));
+		//console.log(Person.age);//instance properties
+	</script>
+</head>
+<body>
+	<button id="inc">increase power</button>
+	<button id="dec">decrease power</button>
+	<button id="city">change city</button>
+	<br />
+	<textarea name="power" id="log" cols="30" rows="10"></textarea>
+</body>
+</html>
