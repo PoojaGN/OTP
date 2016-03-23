@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>01_ex</title>
+        <link rel="stylesheet" href="lib/css/bootstrap.css" />
+        <script src="lib/jquery.js"></script>
+        <script src="lib/bootstrap.js"></script>
+        <script>
+        	$("$btn").on("click",function){
+        		$("photo").attr("class",".img-rounded");
+        	}
+        </script>
+        <style>
+        body{
+        		width:1000px;
+        		margin:0px auto;
+        	}
+        	
+        </style>
+        <script>
+            $(function(){
+                $(window).on("resize", function(){
+                    console.log($("body").width());
+                })
+            })
+        </script>
+    </head>
+    <body>
+          <main class="container-fluid">
+          	<div class="row col-lg-12">
+	          	<div class="img-thumbnail row col-lg-4 height500">
+	          		<img src="images/batman.jpg" alt="batman" />
+	          	</div>
+	          	<div class="img-circle row col-lg-4 height500">
+	          		<img src="images/batman.jpg" alt="batman" />
+	          	</div>
+	          	<input type="button" onclick="function" />
+		          	
+	          	
+          	</div>
+          </main>
+    		
+    </body>
+</html>

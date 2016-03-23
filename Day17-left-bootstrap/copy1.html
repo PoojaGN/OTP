@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>New Web Project</title>
+        <link rel="stylesheet" href="lib/css/bootstrap.css" />
+        <!-- <link rel="stylesheet" href="mystyle/mystyle.css" /> -->
+        <script src="lib/jquery.js"></script>
+        <script src="lib/js/bootstrap.js"></script>
+        <script>
+            $(function(){
+                $("button").on("click", function(evt){
+                    $("#photo").attr("class","img-"+evt.target.innerHTML);
+                });
+            });
+        </script>
+    </head>
+    <body>
+          <main class="container-fluid">
+              <table class="table table-striped table-hover table-condensed table-responsive">
+              <tr>
+                  <th>User Name</th>
+                  <th>First Name</th>
+                  <th>Last Name</th>
+                  <th>City</th>
+              </tr>
+              <tr>
+                  <td>Batman</td>
+                  <td>Bruce</td>
+                  <td>Wayne</td>
+                  <td>Gotham</td>
+              </tr>
+              <tr>
+                  <td>Superman</td>
+                  <td>Clark</td>
+                  <td>Kent</td>
+                  <td>Metropolis</td>
+              </tr>
+              <tr>
+                  <td>Spiderman</td>
+                  <td>Peter</td>
+                  <td>Parker</td>
+                  <td>New York</td>
+              </tr>
+          </table>
+          <button class="btn btn-success">Click Me</button>
+          <a href="#" class="btn btn-success">Click Me Too</a>
+          
+          <hr/>
+          <img id="photo" src="images/joker.jpg" />
+          <button>rounded</button>
+          <button>circle</button>
+          <button>thumbnail</button>
+          </main>
+          
+    </body>
+</html>

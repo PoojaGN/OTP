@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Creation Pattern</title>
+    <script>
+    
+        var Person = Object.create(null);//third way to create an object. 1.using new 2.{}
+            Person.fname = "Bruce";
+            Person.lname = "Wayne";
+            /*
+            Person["full name"] = "Bruce Wayne";
+            console.log(Person["full name"]);
+             */
+            /*
+             */
+            Object.defineProperty(Person,"city",{ //adding new properties
+                value : "Gotham",
+                enumerable : true,
+                configurable : true
+            });
+            console.log(Person.city);
+            for(var prop in Person){
+                // console.log(Person[prop]);
+                console.log(prop);
+            }
+            Object.defineProperty(Person,"city",{
+                value : "Gotham",
+                enumerable : false
+            });
+            
+        var Hero = Object.create(Person);
+            console.log(Hero.fname);
+            console.log(Hero.lname);
+            
+            Object.defineProperty(Person,"country",{
+            	value:"USA"
+            });
+            console.log(Person.country);
+            console.log("++++++++++++++++++++++++");
+            for(var prop in Person){
+                // console.log(Person[prop]);
+                console.log(prop);
+            }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

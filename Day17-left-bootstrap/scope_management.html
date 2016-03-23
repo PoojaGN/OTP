@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Scope_Management</title>
+	<script src="lib/jquery.js"></script>
+	<script>
+		var cart={
+			costPrice:100,
+			getSellingPrice:function(){
+				return this.costPrice+this.costPrice*0.2;
+			},
+			getTotal:function(){
+				
+				var that=this;
+				function calculateTax(){
+					//return this.getSellingPrice()*0.1;
+					return that.getSellingPrice()*0.1;
+				}
+				return this.getSellingPrice()+calculateTax()//.call(cart); ||.call(this);
+			}												//.apply(cart);||.apply(this);
+															//.bind(cart); ||.bind(this);
+			
+		}
+		console.log(cart.getSellingPrice());
+		console.log(cart.getTotal());
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

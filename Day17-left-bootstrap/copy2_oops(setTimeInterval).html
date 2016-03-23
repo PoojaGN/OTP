@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Object</title>
+    <script>
+    /*
+        console.log(this);
+        var obj1 = new Object();
+        var obj2 = {};
+        var obj3 = Object.create(null);
+        console.log(typeof obj1);
+        console.log(typeof obj2);
+        console.log(typeof obj3);
+     */
+        var obj = {
+            fname : "Bruce",
+            lname : "Wayne",
+            fullName : function(message){
+                console.log(message);
+            }
+        };
+        console.log(obj.fname, obj.lname, obj.fullName());
+        window.onload = function(){
+            setTimeout(function(fun1,fun2,arg1, arg2){
+                fun1(arg1)
+                fun2(arg2)
+            }, 2000,method1,method2,"rohini","bidar");
+        };
+        var method1 = function(name){
+            console.log(name)
+        }
+        var method2 = function(city){
+            console.log(city)
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
