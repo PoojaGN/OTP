@@ -1,0 +1,99 @@
+
+<!--<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <script src="lib/jquery.js"></script>
+    <script>
+        $(function(){
+            $("img:eq(0)").on("click", function(evt){
+                $("#log").append(evt.target.getAttribute("alt")+"<br/>")
+            })
+            $("img:eq(1)").on("click", function(evt){
+                // $("#log").append(evt.target.getAttribute("alt")+"<br/>");
+                $("img:eq(0)").trigger("click");
+                $("img:eq(2)").trigger("click");
+            })
+            $("img:eq(2)").on("click", function(evt){
+                $("#log").append(evt.target.getAttribute("alt")+"<br/>")
+            })
+        });
+    </script>
+</head>
+<body>
+    <img src="images/batman.jpg"     alt="Batman"     width="100" />
+    <img src="images/rajani.jpg"     alt="Rajani"     width="100" />
+    <img src="images/superman.jpg"     alt="Superman"     width="100" />
+    <h1 id="log"></h1>
+</body>
+</html>
+
+
+
+
+
+
+-->
+
+
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <script src="lib/jquery.js"></script>
+    <script>
+        $(function(){
+            $("button").on("click",clickFun);
+            
+            setTimeout(function(){
+                $("button").trigger("click");
+            },5000);
+            
+        });
+        function clickFun(evt){
+            alert("you clicked "+evt.target.tagName)
+        };
+    </script>
+</head>
+<body>
+    <button>Submit</button>
+</body>
+</html>
+<!--
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <script src="lib/jquery.js"></script>
+    <script>
+        $(function(){
+            $("img:eq(0)").on("mindtree", function(evt){
+                $("#log").append(evt.target.getAttribute("alt")+"<br/>")
+                $("#log").append(evt.type+"<br/>")
+            });
+            
+            $("img:eq(1)").on("click", function(evt){
+                $("#log").append(evt.target.getAttribute("alt")+"<br/>")
+                $("img:eq(0)").trigger("mindtree");
+                $("img:eq(2)").trigger("kalinga");
+            });
+            
+            $("img:eq(2)").on("kalinga", function(evt){
+                $("#log").append(evt.target.getAttribute("alt")+"<br/>")
+                $("#log").append(evt.type+"<br/>")
+            });
+        });
+    </script>
+</head>
+<body>
+    <img src="images/batman.jpg"     alt="Batman"     width="100" />
+    <img src="images/rajani.jpg"     alt="Rajani"     width="100" />
+    <img src="images/superman.jpg"     alt="Superman"     width="100" />
+    <h1 id="log"></h1>
+</body>
+</html>
+-->

@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style>
+        .box{
+            width: 400px;
+            height: 200px;
+            margin: auto;
+            background-color: #330;
+            color: silver;
+            padding: 5px;
+            font-family: Arial;
+            overflow: auto;
+            text-align:justify;
+        }
+        button{
+            display: block;
+            width: 410px;
+            padding: 5px;
+            margin: 10px auto;
+        }
+    </style>
+    <script src="lib/jquery.js"></script>
+    <script>
+        $(function(){
+            $("button").on("click",function(){
+            	$(".box").load("data/data.txt");
+            });
+        });
+    </script>
+</head>
+<body>
+    <button>Get Data</button>
+    <div class="box"></div>
+</body>
+</html>

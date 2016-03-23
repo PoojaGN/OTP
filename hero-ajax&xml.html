@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style>
+        .box{
+            width: 400px;
+            height: 200px;
+            margin: auto;
+            background-color: #330;
+            color: silver;
+            padding: 5px;
+            font-family: Arial;
+            overflow: auto;
+            text-align:justify;
+        }
+        button{
+            display: block;
+            width: 410px;
+            padding: 5px;
+            margin: 10px auto;
+        }
+    </style>
+    <script src="data/lib/jquery.js"></script>
+    <script>
+        $(function(){
+            $("button").on("click",function(){
+            	//$(".box").load("data/hero.xml");
+            	//$(".box").load("data/data.json",responseHandler);
+            	$.ajax("data/hero.json")
+            		.done(responseHandler) //success
+            		.error(errorHandler);  //fail
+           
+           		$.ajax("data/hero.json")
+           			.then(responseHandler,errorHandler);
+            });
+        });
+        function responseHandler(r,s,jqxhr){
+        	if(s=="error"){
+        	alert("file not found");
+        	}
+        	else{
+        	var data=JSON.parse(r);
+        	console.log(x);
+        	console.log("#################");
+        	console.log(s);
+        	console.log("#################");
+        	console.log(jqxhr);
+        	$(".box").text(r.heroes.hero[0].title);
+        	}
+        }
+        function errorHandler(jqxhr,s,e){
+        	$("box").text(s);
+        	console.log(jqxhr);
+        	console.log("###################");
+        	console.log(s);
+        	console.log("###################");
+        	console.log(e);
+        }
+    </script>
+</head>
+<body>
+    <button >Get Data</button>
+    <div class="box"></div>
+</body>
+</html>
