@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>New Web Project</title>
+        <link rel="stylesheet" href="lib/css/bootstrap.css" />
+        <script src="lib/jquery.js"></script>
+        <script src="lib/"></script>
+        
+        <style>
+        	.graybox{
+        		background-color: gray;
+        		height:100px;
+               }
+            .redbox{
+                background-color: red;
+                height:100px;
+               }
+            .greenbox{
+                background-color: green;
+                height:100px;
+              }
+              .pinkbox{
+              	background-color: pink;
+                height:100px;
+              }
+              .yellowbox{
+              	background-color: yellow;
+                height:100px;
+              }
+              .cyanbox{
+              	background-color: cyan;
+                height:100px;
+              }
+        </style>
+        <script>
+            $(function(){
+                $(window).on("resize", function(){
+                    console.log($("body").width());
+                })
+            })
+        </script>
+    </head>
+    <body>
+          <main class="container-fluid">
+          	<div class="row"><div class="graybox col-lg-12 "></div></div>
+          	<div class="row"><div class="redbox col-lg-12 "></div></div>
+          	<div class="row"><div class="greenbox col-lg-12 "></div></div>
+          	<div class="row" >
+          		<div class="pinkbox col-lg-4 "></div>
+	          	<div class="yellowbox col-lg-4 "></div>          	
+	          	<div class="cyanbox col-lg-4 "></div>          	
+          	</div>
+          </main>
+    		
+    </body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>03_boot</title>
+        <link rel="stylesheet" href="lib/css/bootstrap.css" />
+        <script src="lib/jquery.js"></script>
+        <script src="lib/bootstrap.js"></script>
+        
+        <style>
+        body{
+        		width:1000px;
+        		margin:0px auto;
+        	}
+        	
+        	.graybox{
+        		background-color: gray;
+        		height:100px;
+               }
+            .redbox{
+                background-color: red;
+                height:200px;
+               margin-top:10px;
+               }
+            
+              .pinkbox{
+              	background-color: pink;
+                height:180px;
+                margin-left:10px;
+              }
+              .yellowbox{
+              	background-color: yellow;
+                height:180px;
+                 margin-left:-5px;
+              }
+              .cyanbox{
+              	background-color: cyan;
+                height:180px;
+                margin:10px;
+                margin-left:-5px;
+              }
+              .greenbox{
+                background-color: green;
+                height:180px;
+                margin-left:10px; 
+                /*width:455px;  */
+               
+            }
+        </style>
+        <script>
+            $(function(){
+                $(window).on("resize", function(){
+                    console.log($("body").width());
+                })
+            })
+        </script>
+    </head>
+    <body>
+          <main class="container-fluid col-lg-12">
+          	
+          	<div class="row"><div class="graybox col-lg-12 "></div></div>
+          	
+          	
+          	<div ><div class="row cyanbox col-lg-12"></div></div>
+          	
+          	<div class="row col-lg-12 ">
+          		<div class="yellowbox col-xs-3 "></div>
+          		<div class="pinkbox col-xs-3 "></div>
+          		<div class="row greenbox col-xs-6 "></div>
+          	</div>
+          	<div class="row"><div class="redbox col-lg-12 "></div></div>
+          	
+          	<div class="row"><div class="graybox col-lg-12 "></div></div>
+          </main>
+    		
+    </body>
+</html>
