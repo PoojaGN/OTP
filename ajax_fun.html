@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<style>
+		.box{
+			width:600px;
+			height:500px auto;
+			background-color:silver;
+			margin:0px auto;
+	
+		}
+		button{
+			margin:0px auto;
+			background-color:lime;
+			display: block;
+		}
+	</style>
+	<script>
+		var xhr=new XMLHttpRequest();
+		window.onload=function(){
+			document.getElementsByTagName("button")[0]
+			.addEventListener("click",clickHandler);
+			xhr.onreadystatechange=ajaxHandler;
+		};
+		function ajaxHandler(){
+			if(xhr.status==200 && xhr.readyState==4){
+				document
+				.getElementsByTagName("div")[0]
+				.innerHTML+=xhr.readyState+"<hr />"+xhr.responseText+"<br />";
+			};
+		}
+		function clickHandler(){
+			//sync false
+			//async true
+			//method, url,async or not ,data to server
+			xhr.open("get","data/data.txt",true);
+			xhr.send();
+			//document.getElementsByTagName("div")[0].innerHTML=xhr.responseText;
+		}
+	</script>
+</head>
+<body>
+	<button onclick="clickHandler" >load data</button>
+	<div class="box"></div>
+</body>
+</html>

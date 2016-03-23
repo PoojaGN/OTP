@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<script>
+		var xhr= new XMLHttpRequest();
+		window.onload=function(){
+			document.getElementsByTagName("button")[0].addEventListener("click",clickHandler);
+			xhr.onreadystatechange=ajaxHandler;
+		};
+		function ajaxHandler(){
+			if(xhr.status==200 && xhr.readyState==4)
+				document.getElementById("para").innerHTML+=xhr.readyState+"<hr />"+xhr.responseText+"<br />";
+		}
+		function clickHandler(){
+			xhr.open("get","data/simple.txt",true);
+			xhr.send();
+		}
+	</script>
+	
+	<style>
+		button{
+			margin:0px auto;
+			background-color:#cfa000;
+			display:block;
+		}
+		div{
+			width:500px;
+			height:200px;
+			margin:0px auto;
+			background-color:#c0c0c0;
+		}
+	</style>
+</head>
+<body>
+	<button onclick="clickHandler">load</button>
+	<div id="para"></div>
+</body>
+</html>
