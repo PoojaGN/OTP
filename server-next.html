@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<script src="lib/jquery.js"></script>
+	<script src="lib/underscore.js"></script>
+	<script src="lib/backbone.js"></script>
+	<script>
+		#(function(){
+			$("#btn1").on("click",function(){
+				hero.set({
+					fname:"Bruce,"
+					lname:"wayne"
+				});
+				console.log("data updated")
+			});
+			$("btn2").on("click",function(){
+				 console.log(hero.get("fname"))
+			})
+		})
+	</script>
+</head>
+<body>
+	<h1>Hello from main app</h1>
+	<button id="btn1">Add info to hero</button>
+	<button id="btn2">read info to hero</button>
+</body>
+</html>
