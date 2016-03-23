@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>history</title>
+	<script>
+	window.onload=function(){
+		document
+		.querySelectorAll("button")[0]
+		.addEventlistener("click",function(){
+			history.backward();
+		});
+		document
+		.querySelectorAll("button")[1]
+		.addEventlistener("click",function(){
+			history.go(-1);
+		});
+	};
+	</script>
+</head>
+<body>
+	<a href="">lets go to target page</a>
+	<button>history next</button>
+	<button>history prev</button>
+</body>
+</html>
