@@ -1,0 +1,119 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>prototype</title>
+	<script>
+		var Product=function(){
+			this.title="Laptop";
+			this.photo="url('batsman.jpg')";
+			this.unitprice=100;
+			this.margin=120;
+			this.sku="2 kg";
+			this.category="electronic";
+			this.instock="available";
+			supplier={
+				name:"pooja",
+				phone:9900887766,
+				city:"Bangalore"
+			}
+		};	
+		function giveVendorData(fullname,ph,place){                 /*constructor*/
+			this.name=fullname;
+			this.phone=ph;
+			this.city="place";
+			return Product.supplier;
+		}
+		var person=new giveVendorData("abs",0000,"abc");         
+		console.log(person.name);
+		
+		Product.prototype.currencyPrice=function(arg1){			/*prototype*/		
+			var currency_symbol=arg1;
+			return this.unitprice + this.margin;
+		};
+		var price=new Product();
+		console.log(price.currencyPrice(6));
+		
+		var furniture=Object.create(Product);
+		Object.defineProperties(furniture,{
+			dimensions:{
+				value:10,
+				writable:true
+			},
+			material:{
+				value:"fiber",
+				writable:true,
+				enumarable:true
+			}
+		});
+		furniture.dimensions=50;
+		console.log(furniture.dimensions);
+		furniture.material="plastic";
+		console.log(furniture.material);
+		
+		var cosmetic=Object.create(Product);
+		Object.defineProperties(cosmetic,{
+			fragrence:{
+				value:"lily",
+				writable:true,
+				enumarable:true
+			},
+			color:{
+				value:"white",
+				writable:true,
+				enumarable:true
+			}
+		});
+		cosmetic.fragrence="rose";
+		console.log(cosmetic.fragrence);
+		cosmetic.color="red";
+		console.log(cosmetic.color);
+		
+		var gift=Object.create(Product);
+		Object.defineProperties(furniture,{
+			gender:{
+				value:"female",
+				writable:true
+			},
+			occasion:{
+				value:"friendship day",
+				writable:true,
+				enumarable:true
+			}
+		});
+		gift.gender="female";
+		console.log(gift.gender);
+		gift.occasion="female";
+		console.log(gift.occasion);
+		
+		var apparel=Object.create(Product);
+		Object.defineProperties(furniture,{
+			size:{
+				value:10,
+				writable:true
+			},
+			texture:{
+				value:"tiny",
+				writable:true,
+				enumarable:true
+			},
+			gender:{
+				value:"female",
+				writable:true,
+				enumarable:true
+			}
+		});
+		apparel.size=20;
+		apparel.texture="plain";
+		apparel.gender="male";
+		console.log(apparel.size);	
+		console.log(apparel.texture);	
+		console.log(apparel.gender);	
+		
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

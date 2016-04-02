@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>curry-fun</title>
+	<script>
+	/*curry-fun
+		var mainfun=function(greeting){
+			var secret="hello there";
+			return function(name){
+				console.log(greeting +" ,"+ name + "| " +secret) ;
+			}
+		}
+		mainfun("hi")("pooja");
+		
+	*/
+	//clousers
+	var outerfun=function(){
+		var secret="secret";
+		return function(arg){
+			return secret +" "+ arg;
+		};
+	};
+	var of=outerfun();
+	console.log(of("welcome"));
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

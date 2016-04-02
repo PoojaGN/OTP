@@ -1,28 +1,43 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <title>Document</title>
-    <style>
-        .box{
-            width: 200px;
-            height: 200px;
-            background-color: orange;
-            margin: auto;
-        }
-    </style>
-    <script src="lib/jquery.js"></script>
-    <script>
-    /*
-        $(function(){
-            $(".box").click(function(){
-                //alert("you clicked me");
-            });
-            */
-        
-    </script>
+	<meta charset="UTF-8" />
+	<title>events</title>
+	<style>
+		.box{
+			width:300px;
+			height:300px;
+			margin:auto;
+			background-color:cyan;
+		}
+		textarea{
+			margin:0px auto;
+			font-size:30px;
+			display:block;
+		}
+	</style>
+	<script>
+		
+		window.onload=function (){
+			var box=document.getElementsByTagName("div")[0];
+			if(box.addEventListener){
+				box.addEventListener("mouseover",write);
+				box.addEventListener("mouseup",write);
+				box.addEventListener("mousedown",write);
+				box.addEventListener("mouseout",write);
+				box.addEventListener("click",write);
+			}
+		}
+		function write(){
+			document.getElementById("t1").innerHTML+="box";
+			i++;
+		}
+		
+	</script>
 </head>
 <body>
-    <div class="box"></div>
+	<div class="box"></div>
+	<br />
+	<textarea name="t1" id="t1" cols="30" rows="10"></textarea>
 </body>
 </html>

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>functions</title>
+	<script>
+	/*
+	window.onload=(function(){
+		alert("self invoking ")
+	})
+	
+	window.name="kalinga";
+	window.onload=function(){
+		alert(this.name);
+		
+	}
+	
+	window.data="hai";
+	window.onload=function(msg){
+		var data=msg;
+		console.log(data);
+	}("hi, welcome to possible")
+	
+	
+	function tissue(arg){
+		var num=0;
+		arg(num);
+	}
+	function issue(num){
+		alert(num);
+		return (num+1)*25;
+	}
+	tissue(issue);
+	*/
+	var arr=[1,2,function(){
+		alert("hai");
+	}];
+	arr[2]();
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

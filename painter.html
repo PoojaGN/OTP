@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>painter</title>
+	<script>
+		var painter={
+			name:"painter john",
+			painterJoker:function(){
+				document.getElementById("box").src="images/joker.jpg";
+			}
+		};
+		painter.paintBatman=function paintBatman(){
+			document.getElementById("box").src="images/batman.jpg"
+		}
+		painter.paintPhantom=function paintPhantom(){
+			document.getElementById("box").src="images/phantom.jpg"
+		}
+		painter.paintSpiderman=function paintSpiderman(){
+			document.getElementById("box").src="images/spiderman.jpg"
+		}
+		painter.paintjoker=function paintjoker(){
+			document.getElementById("box").src="images/joker.jpg"
+		}
+		painter.getpaintername=function(){
+			alert("painter name is "+ painter.name);
+		}
+		window.onload=function(){
+			document.getElementsByTagName("button")[0].addEventListener("click",painter.paintBatman);
+			document.getElementsByTagName("button")[1].addEventListener("click",painter.paintPhantom);
+			document.getElementsByTagName("button")[2].addEventListener("click",painter.paintSpiderman);
+			document.getElementsByTagName("button")[3].addEventListener("click",painter.paintjoker);
+			document.getElementsByTagName("button")[4].addEventListener("click",painter.getpaintername);
+		}
+	</script>
+</head>
+<body>
+	<button>batman</button>
+	<button>phanton</button>
+	<button>spiderman</button>
+	<button>joker</button>
+	<button>name</button>
+	<br />
+	<img id="box" />
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>js-fun</title>
+	<script>
+		window.addEventListener("DOMContentLoaded",init);
+		function init(){
+			document.getElementsByTagName("li")[0].addEventListener("click",addHandler);
+			document.getElementsByTagName("li")[4].addEventListener("click",removeHandler);
+		}
+		function addHandler(){
+			alert("clicked me!");
+			document.getElementsByTagName("li")[0].innerHTML="clicked";
+		}
+		function removeHandler(){
+			document.getElementsByTagName("li")[0].removeEventListener("click",addHandler);
+		}
+	</script>
+</head>
+<body>
+	<li>item list 1</li>
+	<li>item list 2</li>
+	<li>item list 3</li>
+	<li>item list 4</li>
+	<li>item list 5</li>
+</body>
+</html>
