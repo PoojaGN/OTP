@@ -1,0 +1,25 @@
+.container{
+	width:600px;
+	height:400px;
+	margin:0px auto;
+}
+
+.header{
+	font-size: 30px;
+	text-align: center;
+}
+
+.slider{
+	overflow:hidden;
+	width:500px;
+	height:400px;
+}
+
+.slides{
+	display:block;
+}
+
+.slide{
+	float:left;
+}
+

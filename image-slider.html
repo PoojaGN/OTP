@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>image-slider</title>
+	<script src="jquery.js"></script>
+	<script>
+		$(function() { 
+		var width = 700;
+	    var currentSlide = 1;
+		var $slider = $('.slider');
+	    var $slideContainer = $('.slides', slider);
+	    var $slides = $('.slide', slider);
+	
+	    var interval;
+	
+	    function startSlider() {
+	        interval = setInterval(function() {
+	            $slideContainer.animate({'margin-left': '-='+700}, 1000, function() {
+		            	currentSlide++;
+		                if (currentSlide === $slides.length) {
+		                    currentSlide = 1;
+		                    $slideContainer.css('margin-left', 0);
+		                }
+	            });
+	        }, 1000);
+	    }
+	    function pauseSlider() {
+	        clearInterval(interval);
+	    }
+	
+	    $slideContainer.on('mouseenter', pauseSlider) .on('mouseleave', startSlider);
+	
+	    startSlider();
+	});
+	</script>
+	<style>
+		.container{
+			margin-top:100px;
+		}
+		
+		#slider .slides {
+		    width: 5200px;
+		    height: 400px;
+		}
+		
+		#slider .slide {
+		    float: left;
+		    list-style-type: none;
+		    width: 720px;
+		    height: 400px;
+		}
+		img{
+			width:720px;
+			height:400px;
+		}
+	</style>
+	
+	
+</head>
+<body>
+	<div class="container">
+		<h1 style="margin-left:600px;">JQuery image slider</h1>
+		<div id="slider">
+			<ul class="slides">
+				<li class="slide"><img src="images/batman.jpg" alt="" /></li>
+				<li class="slide"><img src="images/joker.jpg" alt="" /></li>
+				<li class="slide"><img src="images/ironman.jpg" alt="" /></li>
+				<li class="slide"><img src="images/phantom.jpg" alt="" /></li>
+				<li class="slide"><img src="images/rajani.jpg" alt="" /></li>
+				<li class="slide"><img src="images/spiderman.jpg" alt="" /></li>
+				<li class="slide"><img src="images/superman.jpg" alt="" /></li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>

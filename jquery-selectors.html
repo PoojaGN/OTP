@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>box-exp</title>
+	<script src="jquery.js"></script>
+	<script>
+		$(function(){
+			$(".data").click(function(){
+				$("div").load("data-exp.txt");
+			});
+			$(".remove").click(function(){
+				$("div").empty();
+			});
+			$("div").on("click",function(){
+				$("div").css("color","red");
+			});
+			$("div").mouseover(function(){
+				$("div").css("color","green");
+			});
+			$("div").mouseout(function(){
+				$("div").css("color","yellow");
+			});
+			
+		});	
+	</script>
+	<style>
+		body{
+			margin:0px;
+			margin-left:300px;
+			margin-top:200px;
+		}
+		.box{
+			border:1px solid blue;
+			/*background-color: red;*/
+			width:400px;
+			height:200px;
+			overflow: auto;
+		}
+		
+		
+	</style>
+</head>
+<body>
+	<button class="data">load text</button>
+	<button class="remove">remove text</button>
+	<br />
+	<br />
+	<div class="box"></div>
+</body>
+</html>
