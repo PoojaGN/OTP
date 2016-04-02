@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>ajax</title>
+	<script>
+		var xhr=XMLHttpRequest;
+		window.onload=function(){
+			xhr.onreadystatechange=ajaxHandler;
+			xhr.open("get","batman.xml",true);
+			xhr.send();
+		};
+		function ajaxHandler(){
+			if(xhr.readyState==4 && xhr.status==200){
+				var data=xhr.responseXMl;
+				for(var i=0;i<document.getElementsByTagName("hName").lenght;i++){
+					document.getElementsByTagName("select")[0].innerHTML+="<option>"+document.getElementsByTagName('hName')[i].innetHTML+"</option>";
+				}
+			}
+		}	
+		
+	</script>
+</head>
+<body>
+	<select>
+		<option>select your hero</option>
+	</select>
+</body>
+</html>

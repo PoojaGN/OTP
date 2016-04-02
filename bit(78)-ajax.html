@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>ajax</title>
+	<style>
+		button{
+			margin:auto;
+			
+		}
+		box{
+			width:800px;
+			height:500px;
+			margin:auto;
+			overflow:auto;
+		}
+	</style>
+	<script>
+		var xhr=new XMLHttpRequest();
+		window.onload=function(){
+			// document.getElementsByTagName("button").onclick=clickHandler();
+			// xhr.onreadystatechange = ajaxHandler;
+			if(document.addEventListener){
+					document
+					.getElementsByTagName("button")[0]
+					.addEventListener("click", clickHandler);
+					
+					xhr.addEventListener("onreadystatechange", ajaxHandler);
+				}else{
+					document
+					.getElementsByTagName("button")[0]
+					.attachEvent("onclick", clickHandler);
+					
+					xhr.onreadystatechange = ajaxHandler;
+				}
+		}
+		function ajaxHandler(){
+			xhr.open("get","batman.xml",true);
+			xhr.send();
+		}
+		function clickHandler(){
+			if(xhr.readyState==4 && xhr.status==200){
+				var data=xhr.responseXML;
+				document.getElementsByTagName("div").innerHTML+=xhr.readyState+"<br />"+data.getElementsByTagName("hName")[0].firstChild.nodeValue+"<hr />";
+			}
+		}
+	</script>
+</head>
+<body>
+	<button>load data</button>
+	<div class="box"></div>
+</body>
+</html>
