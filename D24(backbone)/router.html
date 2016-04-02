@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>router</title>
+	<script src="lib/jquery.js"></script>
+	<script src="lib/underscore.js"></script>
+	<script src="lib/backbone.js"></script>
+	<script>
+		var Myrouter=Backbone.Router.extend({
+			routes:{
+				"":"homefun",
+				"bangalore":"bangfun",
+				"mindtree":"mindfun"
+			},
+			homefun:function(){
+				console.log("you are in home page");
+			},
+			bangfun:function(){
+				console.log("you are in bangalore page");
+			},
+			mindfun:function(){
+				console.log("you are in mindtree page");
+			}
+		});
+		var mr=new Myrouter();
+		Backbone.history.start();
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
