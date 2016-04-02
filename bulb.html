@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>bulb</title>
+	<script>
+		function off_bulb(){
+			document.getElementById("abc").src='images/bulb1.jpg';
+		};
+		function on_bulb(){
+			document.getElementById("abc").src='images/bulb2.jpg';
+		};
+	</script>
+	<style>
+		body{
+			background-color:black;
+			width:800px;
+			height:600px;
+			margin:0px auto;
+		}
+		.btnOn, .btnOff{
+			width:100px;
+			margin-top:100px;
+			margin-left:100px;
+		}
+		#abc{
+			margin-left:100px;
+			width:400px;
+			height:400px;
+		}
+	</style>
+</head>
+<body>
+	<input class="btnOn" type="button" value="on_bulb" onclick="off_bulb()">
+	<input class="btnOff" type="button" value="off_bulb" onclick="on_bulb()">
+	<br />
+	<image id="abc" src=""></image>
+</body>
+</html>

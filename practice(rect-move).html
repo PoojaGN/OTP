@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>rect-move</title>
+	<script>
+		
+		window.onload=init;
+		var boxX=-50;
+		var ctx=null;
+		function init(){
+			var c=document.getElementById("demo");
+			ctx=c.getContext("2d");
+			ctx.canvas.width=400;
+			ctx.canvas.height=400;
+			setInterval(anim,50);
+		};
+		function anim(){
+			ctx.clearRect(0,0,ctx.canvas.width,ctx.canvas.height);
+			ctx.fillStyle="red";
+			ctx.beginPath();
+			ctx.fillRect(boxX,40,40,40);
+			ctx.closePath();
+			ctx.beginPath();
+			ctx.fillStyle="green";
+			ctx.fillRect(40,boxX,40,40);
+			ctx.closePath();
+			boxX+=1;
+			if(boxX>400){
+				boxX=-50;
+			}
+		}
+	</script>
+</head>
+<body>
+	<canvas id="demo"></canvas>
+</body>
+</html>

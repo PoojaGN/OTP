@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Rock-paper-scissor-game</title>
+	<script>
+	/*two players:user and computer(random value generation)
+	 just comparing the words entered with the random values
+	 */
+		var userch=prompt("enter your choice[rock,paper,scissor]");
+		var computerch=Math.random()*100;
+		if(computerch>=0 && computerch<=33){
+			computerch="rock";
+		}
+		if(computerch>=34 && computerch<=66){
+			computerch="paper";
+		}
+		if(computerch>=67 && computerch<=100){
+			computerch="scissors";
+		}
+		var compare=function(ch1,ch2){
+			if(ch1==ch2){
+				alert("the result is tie!"); 
+			}
+			else if(ch1=="rock"){
+				if(ch2=="scissors"){
+					alert("rock wins");
+				}
+				else {
+					alert("scissors wins");
+				}
+			}
+			else if(ch1=="paper"){
+				if(ch2=="rock"){
+					alert("paper wins");
+				}
+				else {
+					alert("rock wins");
+				}
+			}
+			else if(ch1=="scissors"){
+				if(ch2=="paper"){
+					alert("scissors wins");
+				}
+				else {
+					alert("paper wins");
+				}
+			}
+		};
+		compare(userch,computerch);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

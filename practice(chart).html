@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>chart</title>
+	<script>
+		window.onload=init;
+		var ctx=null;
+		var data={
+			d1:[20,300,50,100],
+			d2:[80,250,50,170],
+			d3:[140,325,50,150],
+			d4:[200,280,50,200],
+			d5:[260,300,50,100],
+			d6:[320,300,50,250]
+		};
+		var col=["#abc345","#345abc","#123ae7","#289567","#acdef4","e34562"];
+		function init(){
+			var c=document.getElementById("demo");
+			ctx=c.getContext("2d");
+			ctx.strokeStyle="#804356";
+			for(var i=0;i<400;i+=5){
+				ctx.moveTo(i,0);
+				ctx.lineTo(i,400);
+				ctx.moveTo(0,i);
+				ctx.lineTo(400,i);
+			}
+			ctx.stroke();
+			for(var i=1;i<7;i++){
+				ctx.fillStyle=data["d"+i][3]<=100 ? "orange":col[i-1];
+				ctx.fillRect(data["d"+i][0], data["d"+i][1], data["d"+i][2],data["d"+i][3]);
+			}
+		}
+		
+	</script>
+</head>
+<body>
+	<canvas id="demo" width="400px" height="400px"></canvas>
+</body>
+</html>

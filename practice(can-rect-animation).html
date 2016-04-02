@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>rect-anim</title>
+	<script>
+		window.onload=init;
+		var ctx=null;
+		function init(){
+			var c=document.getElementById("demo");
+			ctx=c.getContext("2d");
+			setInterval(anim,10);
+		}
+		function anim(){
+			
+			var boxX=Math.round(Math.random()*400);
+			var boxY=Math.round(Math.random()*400);
+			var boxW=Math.round(Math.random()*50);
+			var boxH=Math.round(Math.random()*50);
+			var r=Math.round(Math.random()*255);
+			var g=Math.round(Math.random()*255);
+			var b=Math.round(Math.random()*255);
+			
+			ctx.fillStyle="rgb("+r+","+g+","+b+")";
+			ctx.fillRect(boxX,boxY,boxW,boxH);
+		}
+	</script>
+</head>
+<body>
+	<canvas id="demo" width="400px" height="400px" style="border 1px solid black"></canvas>
+</body>
+</html>

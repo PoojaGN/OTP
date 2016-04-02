@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>canvas moving name</title>
+	<script>
+	window.onload=function(){
+		num=0;
+		var c=document.getElementById("demo");
+		var ctx=c.getContext("2d");
+		ctx.canvas.width=1000;
+		ctx.canvas.height=1000;
+		ctx.translate(400,300);
+		ctx.font="40px ariel"
+		setInterval(function(){
+			num+=0.1;
+			var r=Math.round(Math.random()*255);
+			var g=Math.round(Math.random()*255);
+			var b=Math.round(Math.random()*255);
+			ctx.fillStyle="rgb("+r+","+g+","+b+")";
+			
+			ctx.rotate((Math.PI/180)*num);
+			ctx.fillText("pooja",0,0);
+		},100)
+		
+		
+	}	
+	</script>
+</head>
+<body>
+	<canvas id="demo">hello</canvas>
+</body>
+</html>

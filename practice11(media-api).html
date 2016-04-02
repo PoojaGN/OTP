@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>media api</title>
+	<script>
+		function vidplay(){
+			document.getElementById("vid").play();
+			setInterval(chcekvid,10)
+		}
+		function vidpause(){
+			document.getElementById("vid").pause();
+		}
+		function vidstop(){
+			var vid=document.getElementById("vid");
+			vid.currentTime=0;
+			vid.pause();
+		}
+		function checkvid(){
+			document.getElementBy("log").innerHTML=document.getElementById("vid").currentTime;
+		}
+	</script>
+</head>
+<body>
+	<h1 id="log"></h1>
+	<video  id="vid" poster="images/batman.jpg" >
+		<source src="assets/html5.webm.webm"></source>
+		<source src="assets/html5.ogv.ogv"></source>
+		<source src="assets/html5.mp4.mp4"></source>
+		<track default src="assets/mindtree.vtt" />
+		<object type="application/x-shockwave-flash" width="640" height="480">
+			<param name="movie" value="assets/html5.flash.swf" />
+		</object>
+	</video>
+	<button id="p1" onclick="vidplay()">play</button>
+	<button id="p2" onclick="vidpause()">pause</button>
+	<button id="p3" onclick="vidstop()">stop</button>
+</body>
+</html>

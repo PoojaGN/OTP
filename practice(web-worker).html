@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>web-worker</title>
+	<script>
+		window.onload=function(){
+			var worker=new Worker("web-worker.js");
+			worker.onmessage=messageHandler;
+		}
+		function messageHandler(evt){
+			document.getElementsByTagName("h1")[0].innerHTML=evt.data;
+		}
+	</script>
+</head>
+<body>
+	<h1></h1>
+</body>
+</html>

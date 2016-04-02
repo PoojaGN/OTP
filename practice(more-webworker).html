@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>web-worker</title>
+	<script>
+	var worker=null;
+	function startWorker(){
+		worker=new Worker("web-worker.js");
+		worker.onmessage=messageHandler;
+	}
+	function messageHandler(evt){
+		if(worker){
+			document.getElementById("log").innerHTML=evt.data;
+		}
+		else {
+			alert("first click on start");
+		}
+	}
+	function sendMessage(evt){
+		if(worker){
+			worker.postMessage(document.getElementById("log").value);
+		}
+		else {
+			alert("first click on start");
+		}
+	}
+	function stopWorker(){
+		if(worker){
+			worker.terminate();
+			worker=null;
+		}
+		else {
+			alert("first click on start");
+		}
+	}
+	</script>
+</head>
+<body>
+	<h1 id="log"></h1>
+	<input type="text" />
+	<button onclick="startWorker()">start</button>
+	<button onclick="sendMessage()">send</button>
+<button onclick="stopWorker()">stop</button>
+</body>
+</html>

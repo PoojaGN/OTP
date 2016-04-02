@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>canvas image</title>
+	<script>
+	window.onload=function(){
+		var c=document.getElementById("demo");
+		var ctx=c.getContext("2d");
+		ctx.canvas.width=1000;
+		ctx.canvas.height=1000;
+		
+		// var img=new Image();
+		// img.src="images/batman.jpg";
+		// img.onload=function(){
+			// ctx.drawImage(img,0,0,250,250);
+		// };
+		
+		ctx.beginPath();
+		ctx.fillStyle="orange";
+		ctx.moveTo(50,50);
+		ctx.lineTo(50,100);
+		ctx.lineTo(100,100);
+		ctx.lineTo(100,50);
+		ctx.lineTo(50,50);
+		ctx.fill();
+		ctx.stroke();
+		ctx.closePath();
+	}	
+	</script>
+</head>
+<body>
+	<canvas id="demo"></canvas>
+</body>
+</html>

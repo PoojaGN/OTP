@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>local storage</title>
+	<script>
+		function storefun(){
+			var data={
+			un:document.getElementById("un").value,
+			ua:document.getElementById("ua").value,
+			ue:document.getElementById("ue").value
+			};
+			localStorage.data=JSON.stringify(data);
+		}
+		function readfun(){
+			var data=JSON.parse(localStorage.data);
+			alert(data.ue+ "|"+ data.ua +"|"+ data.ue);
+		}
+	</script>
+</head>
+<body>
+	username:<input type="text" id="un"/>
+	userage:<input type="text" id="ua"/>
+	useremail:<input type="text" id="ue"/>
+	<br />
+	<input type="submit" value="submit" onclick="storefun()" />
+	<hr />
+	<button  onclick="readfun()">Read values</button>
+</body>
+</html>

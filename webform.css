@@ -1,0 +1,58 @@
+#header {
+    position: relative;
+    top: -10px;
+    background-color: #001230;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+	height: 40px;
+}
+
+h1 {
+    font-family: ariel;
+    color: #ff45ff;
+    text-align: center;
+}
+
+form {
+    font-family: sans-serif;
+}
+
+p {
+    font-family: Verdana;
+    display: inline-block;
+}
+
+input {
+    font-family: Arial;
+    color: #74a;
+}
+
+textarea {
+	vertical-align: top;
+	width: 400px;
+	color: #75b;
+}
+
+#article {
+    border-left: 1px solid silver;
+    border-right: 1px solid silver;
+    border-bottom: 1px solid silver;
+    position: relative;
+    top: -10px;
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    box-shadow: 3px 3px 3px #432;
+    font-family: sans-serif;
+    font-size: 20px;
+}
+
+#demo {
+	width: 200px;
+	clear: both;
+}
+
+#inputs input {
+	width: 100%;
+	clear: both;
+}

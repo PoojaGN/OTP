@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>date</title>
+	<script>
+		// var myVar = setInterval(myTimer, 1000);
+		// function myTimer() {
+	    // var d = new Date();
+	    // document.getElementById("demo").innerHTML = d.toLocaleTimeString();
+// }
+	var myVar = setInterval(myTimer, 1000);
+
+	function myTimer() {
+    var d = new Date();
+    document.getElementById("demo").innerHTML = d.toLocaleTimeString();
+	}
+
+	</script>
+	</head>
+<body>
+	<p id="demo"></p>
+
+	<button onclick="setInterval(myVar)">start time</button>
+	<button onclick="clearInterval(myVar)">Stop time</button>
+
+</body>
+</html>

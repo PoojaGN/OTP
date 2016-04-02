@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>form</title>
+	<style>
+		body{
+			border:1px solid black;
+			margin:0px auto;
+			width:300px;
+			height:130px;
+			margin-top:250px;
+		}
+	</style>
+	<script>
+		function validate(){
+			var uname=document.getElementsByTagName("input")[0].value;
+			var pass=document.getElementsByTagName("input")[1].value;
+		}
+		var win=null;
+		addEventListener("load",init);
+		function init(){
+			document.getElementById("ow").addEventListener("click",openfun);
+		}
+		function openfun(){
+			win=window.open("welcome.html","","width=300,height=300");
+		}
+		
+	</script>
+</head>
+<body >
+	<form action="" method="post" onsubmit="validate()">
+		<table  cellpadding="5px" cellspacing="5px" >
+			<tr><td>UserName:</td><td><input type="text" required /></td></tr>
+			<tr><td>Password:</td><td><input id="pass" type="password" required/></td></tr>
+			<tr><td><input type="submit" id="ow" value="Login"/></td><td><input type="button" value="signup"/></td></tr>
+		</table>
+		
+	</form>
+	
+</body>
+</html>

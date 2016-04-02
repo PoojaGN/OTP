@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Read-Values</title> 
+	<script>
+	function storefun(){
+		sessionStorage.un=document.getElementById("un").value;
+		sessionStorage.ue=document.getElementById("ue").value;
+	}
+	function readfun(){
+		alert(sessionStorage.un +"|"+ sessionStorage.ue);
+	}		
+	function getCount(){
+		alert(sessionStorage.length);
+	}		
+	function getName(){
+		alert(sessionStorage.getItem("un"));
+	}		
+	function writeName(){
+		sessionStorage.setItem("un","Batman");
+		alert("username updated")
+	}		
+	function removeName(){
+		sessionStorage.removeItem("un");
+		alert("username removed")
+	}		
+	function removeAll(){
+		sessionStorage.clear();
+		alert("all clear")
+	}		
+	function getKey(){
+		alert(sessionStorage.key(0));
+		
+	}		
+	</script>
+</head>
+<body>
+	username:<input type="text" id="un"/>
+	usereMail:<input type="text" id="ue"/>
+	<input type="submit" value="submit" onclick="storefun()"/>
+	<hr />
+	<input type="button" value="read values" onclick="readfun()"/>
+	<br />
+	<input type="button" value="Get count" onclick="getCount()"/>
+	<input type="button" value="Get name" onclick="getName()"/>
+	<input type="button" value="write name" onclick="writeName()"/>
+	<input type="button" value="remove name" onclick="removeName()"/>
+	<input type="button" value="remove all" onclick="removeAll()"/>
+	<input type="button" value="get key @0" onclick="getKey()"/>
+</body>
+</html>

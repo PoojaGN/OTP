@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>geolocation</title>
+	<script>
+		
+			// window.onload=function(){
+				// if(navigator.geolocation){
+				// alert("geolocation is possible");
+			// }
+			// else{
+				// alert("your are not connected");
+			// }
+		// }
+		
+			window.onload=function(){
+				if(navigator.geolocation){
+					document.getElementById("demo").innerHTML="Geolocation is supported";
+					navigator.geolocation.getCurrentPosition(successfun,errorfun);
+			}
+			else{
+				document.getElementById("demo").innerHTML="Geolocation is not supported";
+			}
+		};
+// 		
+		// function successfun(){
+			// alert("we can find location");
+		// }
+		// function errorfun(){
+			// alert("we cant find location");
+		// }
+		
+		// function init(arg1,arg2){
+		// if(false){
+			// arg1();
+		// }else{
+			// arg2();
+		// }
+	// }
+	// function callme(){
+		// alert("hello there");
+	// };
+	// function callyou(){
+		// alert("hello world");
+	// };
+	// init(callme,callyou);
+	</script>
+</head>
+<body>
+	<h1 id="demo"></h1>
+</body>
+</html>

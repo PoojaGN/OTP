@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>highway</title>
+	<script>
+		window.onload=function(){
+			var c=document.getElementById("demo");
+			var ctx=c.getContext("2d");
+			ctx.canvas.width=1000;
+			ctx.canvas.height=1000;
+			
+			ctx.beginPath();
+			ctx.strokeStyle="silver";
+			ctx.lineWidth=60;
+			ctx.moveTo(50,50);
+			ctx.lineTo(300,300);
+			ctx.closePath();
+			ctx.stroke();
+			
+			ctx.beginPath();
+			ctx.strokeStyle="black";
+			ctx.lineWidth=50;
+			ctx.moveTo(50,50);
+			ctx.lineTo(300,300);
+			ctx.closePath();
+			ctx.stroke();
+			
+			ctx.beginPath();
+			ctx.strokeStyle="white";
+			ctx.lineWidth=5;
+			ctx.moveTo(50,50);
+			ctx.lineTo(70,70);
+			ctx.moveTo(80,80);
+			ctx.lineTo(100,100);
+			ctx.moveTo(110,110);
+			ctx.lineTo(130,130);
+			ctx.moveTo(140,140);
+			ctx.lineTo(160,160);
+			ctx.moveTo(170,170);
+			ctx.lineTo(190,190);
+			ctx.moveTo(200,200);
+			ctx.lineTo(220,220);
+			ctx.moveTo(230,230);
+			ctx.lineTo(250,250);
+			ctx.moveTo(260,260);
+			ctx.lineTo(280,280);
+			ctx.moveTo(290,290);
+			ctx.lineTo(300,300);
+			ctx.closePath();
+			ctx.stroke();
+		}
+	</script>
+</head>
+<body>
+	<canvas id="demo"></canvas>
+</body>
+</html>

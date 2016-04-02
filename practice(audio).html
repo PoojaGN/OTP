@@ -1,0 +1,39 @@
+<!-- 
+	window.setTimeout(function, milliseconds);
+	window.clearTimeout(timeoutVariable)
+	window.setInterval(function, milliseconds);
+ -->
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>media api</title>
+	<script>
+		function audiplay(){
+			document.getElementById("audi").play();
+			setInterval(chcekaudi,10);
+		}
+		function audipause(){
+			document.getElementById("audi").pause();
+		}
+		function audistop(){
+			var vid=document.getElementById("audi");
+			vid.currentTime=0;
+			vid.pause();
+		}
+		function checkaudi(){
+			document.getElementBy("log").innerHTML=document.getElementById("audi").currentTime+"| Duration is "+document.getElemnetById("audi").duration;
+		}
+	</script>
+</head>
+<body>
+	<h1 id="log"></h1>
+	<audio id="audi" controls poster="images/batman.jpg" >
+		<source src="assets/music.mp3"></source>
+	</audio>
+	</audio>
+	<button id="p1" onclick="audiplay()">play</button>
+	<button id="p2" onclick="audipause()">pause</button>
+	<button id="p3" onclick="audistop()">stop</button>
+</body>
+</html>

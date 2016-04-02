@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>canvas</title>
+	<style>
+		canvas{
+			border:1px solid blue;
+		}
+	</style>
+	<script>
+		   /*                           for rectangle
+		window.onload= function(){
+			 var can=document.getElementById("demo").getContext("2d");
+			 can.canvas.width="600"
+			 can.canvas.height="600"
+	  		 can.fillStyle="cyan";
+		 	 can.fillRect(0,0,150,70);
+		 	}
+		
+		                           for line
+		    window.onload=function(){
+		    	
+		    	var c = document.getElementById("demo");
+				var ctx = c.getContext("2d");
+				ctx.moveTo(0,0);
+				ctx.lineTo(200,100);
+				ctx.stroke();
+		    }
+		    
+		                       for circle
+		    window.onload=function(){
+		    	var c=document.getElementById("demo");
+		    	var ctx=c.getContext("2d");
+		    	ctx.beginPath();
+		    	ctx.arc(95,50,40,0,2*Math.PI);
+		    	ctx.stroke();
+		    }
+		   
+		   window.onload=function(){
+		   	var c=document.getElementById("demo");
+		   	var ctx=c.getContext("2d");
+		   	//ctx.font="30px ariel";
+		   	//ctx.fillText("welcome",10,50);
+		   	
+		   	ctx.font="30px ariel";
+		   	ctx.strokeText("welcome",10,50);
+		   	ctx.stroke();
+		   } 
+		   window.onload=function(){
+		   	var c=document.getElementById("demo");
+		   	var ctx=c.getContext("2d");
+		   	var grd=ctx.createLinearGradient(0,0,200,0);
+		   	grd.addColorStop(0,"red");
+		   	grd.addColorStop(1,"blue");
+		   	ctx.fillStyle=grd;
+		   	ctx.fillRect(10,10,150,80);
+		   }
+		  
+		  window.onload=function(){
+			   	var c=document.getElementById("demo");
+			   	var ctx=c.getContext("2d");
+			   	// var grd=ctx.createLinearGradient(0,0,200,0);
+			   	// grd.addColorStop(0,"red");
+			   	// grd.addColorStop(1,"blue");
+			   	ctx.fillStyle="red";
+			   	ctx.font="30px ariel";
+			   	ctx.fillText("welcome",10,50);
+		   } */
+		  window.onload=function(){
+		    	var c=document.getElementById("demo");
+		    	var ctx=c.getContext("2d");
+		    	ctx.fillStyle = "purple";
+				ctx.strokeStyle = "green";
+				// ctx.lineJoin = "miter";
+				ctx.lineWidth = 10;
+				ctx.moveTo(200,200);
+				ctx.arc(200,200,100,(Math.PI/180)*0, (Math.PI/180)*90, false);
+				ctx.closePath();
+				ctx.stroke();
+				ctx.fill();
+		    }
+	</script>
+</head>
+<body>
+	<canvas id="demo">update your browser</canvas>
+</body>
+</html>
